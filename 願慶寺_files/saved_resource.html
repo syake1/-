@@ -1,0 +1,135 @@
+
+<!-- saved from url=(0260)https://1665585097-atari-embeds.googleusercontent.com/embeds/16cb204cf3a9d4d223a0a3fd8b0eec5d/inner-frame-minified.html?jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.ja.OSmOiv7CE2U.O%2Fd%3D1%2Frs%3DAHpOoo-f4WB8btJWkp_Egf9VekHj3Lxt0w%2Fm%3D__features__ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base target="_blank">--><base href="." target="_blank">
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css2" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        .hero-container {
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            /* 比叡山のような静謐な光を表現するグラデーション */
+            background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #000 70%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 背景に浮かぶ薄い英字ロゴ */
+        .bg-text {
+            position: absolute;
+            font-family: 'Cinzel', serif;
+            font-size: 18vw;
+            color: rgba(212, 175, 55, 0.05); /* 極めて薄いゴールド */
+            letter-spacing: 2rem;
+            white-space: nowrap;
+            z-index: 1;
+            user-select: none;
+            animation: pulse 8s infinite alternate;
+        }
+
+        .main-visual {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        /* 筆文字ロゴ */
+        .logo-title {
+            font-family: 'Yuji Syuku', serif;
+            color: #fff;
+            font-size: clamp(4.5rem, 18vw, 10rem);
+            line-height: 1;
+            letter-spacing: 1.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            /* 金箔のような質感のグラデーション */
+            background: linear-gradient(135deg, #fff 0%, #d4af37 50%, #fff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+            animation: revealText 3s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+        }
+
+        /* サブタイトル */
+        .logo-sub {
+            font-family: 'Noto Serif JP', serif;
+            color: #d4af37;
+            font-size: clamp(0.9rem, 3vw, 1.4rem);
+            letter-spacing: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 200;
+            opacity: 0;
+            animation: fadeIn 2s 1.5s forwards;
+            margin-top: 10px;
+        }
+
+        /* 装飾ライン */
+        .divider {
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 20px auto;
+            animation: expandLine 2s 1s forwards;
+        }
+
+        /* アニメーション設定 */
+        @keyframes revealText {
+            0% { opacity: 0; transform: scale(0.9) translateY(30px); filter: blur(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; letter-spacing: 2rem; }
+            to { opacity: 1; letter-spacing: 0.8rem; }
+        }
+
+        @keyframes expandLine {
+            to { width: 100%; }
+        }
+
+        @keyframes pulse {
+            from { opacity: 0.03; transform: scale(1); }
+            to { opacity: 0.07; transform: scale(1.05); }
+        }
+
+        /* 霧のエフェクト */
+        .fog {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            top: 0; left: -50%;
+            animation: fogMove 20s infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes fogMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50%, 10%); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero-container">
+    <div class="bg-text">GANKOJI</div>
+    <div class="fog"></div>
+    
+    <div class="main-visual">
+        <p class="logo-sub" style="margin-bottom: 0;">吉崎御坊 聖地</p>
+        <div class="divider"></div>
+        <h1 class="logo-title">願慶寺</h1>
+        <p class="logo-sub">YOSHIZAKI GOBO GANKOJI</p>
+    </div>
+</div>
+
+
+</body></html>

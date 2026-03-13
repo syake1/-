@@ -1,0 +1,348 @@
+/* ===== 基本設定 ===== */
+
+:root {
+    --bg-color: #000000;
+    --text-color: #e0e0e0;
+    --accent-color: #dfbc7a;
+    --dark-bg: #000000;
+    --light-text: #ffffff;
+    --crimson: #c63333;
+    --serif: 'Noto Serif JP', '游明朝', 'Yu Mincho', serif;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+color:var(--text-color);
+font-family:var(--serif);
+line-height:1.8;
+overflow-x:hidden;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 30px;
+}
+
+/* ===== ヘッダー ===== */
+
+header{
+background:rgba(0,0,0,0.9);
+backdrop-filter:blur(10px);
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+border-bottom:2px solid var(--accent-color);
+}
+
+.header-inner{
+max-width:1400px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 30px;
+}
+
+.logo{
+font-size:28px;
+letter-spacing:3px;
+color:var(--accent-color);
+}
+
+.logo a{
+color:inherit;
+text-decoration:none;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+flex-wrap:wrap;
+}
+
+nav li{
+margin-left:20px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-size:18px;
+letter-spacing:2px;
+padding:6px 12px;
+border:1px solid transparent;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--accent-color);
+border:1px solid var(--accent-color);
+}
+
+/* ===== セクション ===== */
+
+.section{
+padding:120px 0;
+background:#000;
+}
+
+.section-title{
+margin-bottom:60px;
+text-align:center;
+}
+
+.section-title h3{
+font-size:36px;
+letter-spacing:4px;
+}
+
+/* ===== ヒーロー ===== */
+
+.hero{
+height:100vh;
+background:url('hero_yoshizaki.png') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+position:relative;
+}
+
+.hero-content h2{
+font-size:72px;
+letter-spacing:10px;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+/* ===== 歴史 ===== */
+
+.content-grid{
+display:grid;
+grid-template-columns:1fr 1.3fr;
+gap:50px;
+}
+
+.history-images{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.image-frame img{
+width:100%;
+}
+
+/* ===== 伝説 ===== */
+
+.legend-container{
+display:flex;
+flex-direction:column;
+gap:50px;
+}
+
+.legend-visuals{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+.visual-card img{
+width:100%;
+height:420px;
+object-fit:cover;
+}
+
+.story-main p{
+font-size:17px;
+}
+
+/* ===== 風景 ===== */
+
+.scenery-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.scenery-image{
+height:320px;
+}
+
+.scenery-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.scenery-item.highlight{
+grid-column:span 2;
+}
+
+/* ===== 掲示板 ===== */
+
+.bbs-form{
+padding:30px;
+border:2px solid var(--accent-color);
+}
+
+.submit-btn{
+background:var(--accent-color);
+color:black;
+font-size:16px;
+padding:10px;
+border:none;
+cursor:pointer;
+}
+
+/* ===== アクセス ===== */
+
+.access-content{
+display:grid;
+grid-template-columns:1fr 1.4fr;
+gap:50px;
+}
+
+.info-item p{
+font-size:17px;
+color:white;
+}
+
+.access-map iframe{
+width:100%;
+height:420px;
+border:0;
+}
+
+/* ===== TOPボタン ===== */
+
+#backToTop{
+position:fixed;
+bottom:30px;
+right:30px;
+width:60px;
+height:60px;
+background:black;
+border:2px solid var(--accent-color);
+color:var(--accent-color);
+cursor:pointer;
+opacity:0;
+transition:.3s;
+}
+
+#backToTop.visible{
+opacity:1;
+}
+
+/* ===== スマホ対応 ===== */
+
+@media screen and (max-width:768px){
+
+.container{
+padding:0 15px;
+}
+
+/* ヘッダー */
+
+.header-inner{
+flex-direction:column;
+padding:15px;
+}
+
+.logo{
+font-size:22px;
+margin-bottom:10px;
+}
+
+/* メニュー修正（崩れ防止）*/
+
+nav ul{
+flex-direction:column;
+width:100%;
+}
+
+nav li{
+margin:5px 0;
+width:100%;
+}
+
+nav a{
+display:block;
+text-align:center;
+font-size:16px;
+border-bottom:1px solid rgba(223,188,122,0.3);
+}
+
+/* ヒーロー */
+
+.hero-content h2{
+font-size:34px;
+letter-spacing:4px;
+}
+
+.hero-content p{
+font-size:14px;
+}
+
+/* グリッド縦化 */
+
+.content-grid{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+.legend-visuals{
+grid-template-columns:1fr;
+}
+
+.visual-card img{
+height:auto;
+}
+
+.scenery-grid{
+grid-template-columns:1fr;
+}
+
+.scenery-item.highlight{
+grid-column:span 1;
+}
+
+.access-content{
+grid-template-columns:1fr;
+}
+
+/* MAP */
+
+.access-map iframe{
+height:280px;
+}
+
+/* 掲示板 */
+
+.bbs-form{
+padding:20px;
+}
+
+/* TOP */
+
+#backToTop{
+width:45px;
+height:45px;
+right:15px;
+bottom:15px;
+font-size:12px;
+}
+
+}
