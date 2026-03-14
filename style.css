@@ -2,40 +2,44 @@ body{
 
 margin:0;
 
-font-family:
-"Yu Gothic",
-"Meiryo",
-sans-serif;
+background:#020617;
 
-background:
-linear-gradient(
-180deg,
-#0a192f,
-#02060f);
+font-family:
+
+"Yu Gothic",
+
+"Meiryo",
+
+sans-serif;
 
 color:white;
 
 }
 
-/* トップ画面 */
+/* トップ画像 */
 
 .hero{
 
-height:300px;
+height:420px;
+
+background:
+linear-gradient(
+rgba(0,0,0,0.6),
+rgba(0,0,0,0.8)),
+
+url("https://picsum.photos/1600/900");
+
+background-size:cover;
+
+background-position:center;
 
 display:flex;
-
-flex-direction:column;
 
 justify-content:center;
 
 align-items:center;
 
-background:
-linear-gradient(
-135deg,
-#001f3f,
-#003366);
+text-align:center;
 
 }
 
@@ -43,35 +47,37 @@ linear-gradient(
 
 .hero-title{
 
-font-size:50px;
-
-letter-spacing:8px;
-
-background:
-linear-gradient(
-90deg,
-#00c6ff,
-#0072ff);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
-text-align:center;
+font-size:65px;
 
 margin:0;
 
+letter-spacing:12px;
+
+font-weight:bold;
+
+color:white;
+
+text-shadow:
+
+0 0 10px #00aaff,
+
+0 0 25px #0088ff,
+
+0 0 50px #0044ff;
+
 }
 
-/* サブタイトル */
+/* サブ */
 
 .hero-sub{
 
-font-size:20px;
+font-size:22px;
 
-color:#cccccc;
+color:#dddddd;
 
-letter-spacing:3px;
+letter-spacing:5px;
+
+margin-top:15px;
 
 }
 
@@ -79,9 +85,9 @@ letter-spacing:3px;
 
 .menu{
 
-background:#111;
+background:#000814;
 
-padding:15px;
+padding:18px;
 
 text-align:center;
 
@@ -93,9 +99,11 @@ color:white;
 
 text-decoration:none;
 
-margin:20px;
+margin:25px;
 
-font-size:18px;
+font-size:20px;
+
+font-weight:bold;
 
 transition:0.3s;
 
@@ -103,7 +111,7 @@ transition:0.3s;
 
 .menu a:hover{
 
-color:#00c6ff;
+color:#00aaff;
 
 }
 
@@ -111,8 +119,80 @@ color:#00c6ff;
 
 .content{
 
-padding:40px;
+max-width:900px;
+
+margin:auto;
+
+padding:50px 20px;
 
 text-align:center;
+
+}
+
+.content h2{
+
+font-size:32px;
+
+margin-bottom:20px;
+
+color:#00aaff;
+
+}
+
+.content p{
+
+font-size:18px;
+
+line-height:1.8;
+
+}
+
+/* フッター */
+
+footer{
+
+background:black;
+
+text-align:center;
+
+padding:20px;
+
+color:#888;
+
+}
+
+/* スマホ */
+
+@media(max-width:700px){
+
+.hero{
+
+height:300px;
+
+}
+
+.hero-title{
+
+font-size:38px;
+
+letter-spacing:6px;
+
+}
+
+.hero-sub{
+
+font-size:16px;
+
+}
+
+.menu a{
+
+display:block;
+
+margin:10px;
+
+font-size:18px;
+
+}
 
 }
