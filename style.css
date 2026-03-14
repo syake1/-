@@ -1,369 +1,118 @@
-承知いたしました！最新の**案内図付き・四季サイクル15秒版**のコードをすべてお出しします。
+body{
 
-それぞれ枠の右上のボタンからコピーして、GitHub のファイルを上書きしてください。
+margin:0;
 
-### 1. `index.html`（案内図・年表・15秒サイクル版）
+font-family:
+"Yu Gothic",
+"Meiryo",
+sans-serif;
 
-```html
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>吉崎御坊 願慶寺 - 歴史と伝説の地 | あわら市</title>
-    <meta name="description" content="蓮如上人ゆかりの地、吉崎御坊の歴史と略年表、「嫁脅しの肉付きの面」の伝説、アクセス情報をご紹介します。">
-    <link rel="stylesheet" href="style.css?v=40">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=游明朝&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="header-inner">
-            <h1 class="logo">吉崎御坊 願慶寺</h1>
-            <nav>
-                <ul>
-                    <li><a href="#history">歴史</a></li>
-                    <li><a href="#legend">伝説</a></li>
-                    <li><a href="#scenery">風景</a></li>
-                    <li><a href="#bbs">掲示板</a></li>
-                    <li><a href="#access">アクセス</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+background:
+linear-gradient(
+180deg,
+#0a192f,
+#02060f);
 
-    <main>
-        <!-- ヒーローセクション（自動切り替え 15s） -->
-        <section id="hero" class="hero">
-            <div id="sakura-container"></div>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <span class="sub-title">蓮如上人が開いた北陸の聖地</span>
-                <h2 id="hero-title">吉崎御坊 願慶寺</h2>
-                <p id="hero-desc">静寂、湖畔。550年の時を超えて響く念仏の心。</p>
-            </div>
-        </section>
+color:white;
 
-        <!-- 歴史セクション（略年表入り） -->
-        <section id="history" class="section">
-            <div class="container">
-                <div class="section-title">
-                    <span class="en">History</span>
-                    <h3>吉崎御坊 願慶寺 略年表</h3>
-                </div>
-                <div class="history-main" style="margin-bottom:60px;">
-                    <div class="text-block" style="margin-bottom:30px; border-left:4px solid #dfbc7a; padding-left:20px;">
-                        <p>吉崎御坊は、文明3年（1471年）に蓮如上人が建立した寺院。その歩みを資料とともにご紹介します。</p>
-                    </div>
-                    <div class="chronology-frame" style="background:#fefefe; padding:10px; border:2px solid #dfbc7a; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
-                        <img src="nenpyo.jpg" alt="吉崎御坊 願慶寺 略年表" style="width:100%; height:auto; display:block;">
-                        <p style="text-align:right; font-size:12px; color:#666; margin-top:10px;">資料：福井県史より</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 伝説セクション -->
-        <section id="legend" class="section dark">
-            <div class="container">
-                <div class="section-title white">
-                    <span class="en">The Legend</span>
-                    <h3>嫁脅しの肉付きの面</h3>
-                </div>
-                <div class="legend-container">
-                    <div class="legend-visuals">
-                        <div class="visual-card">
-                            <img src="legend_visual_2.jpg" alt="嫁威肉附面 版木">
-                            <div class="visual-label">嫁威肉附面 版木（全体）</div>
-                        </div>
-                        <div class="visual-card">
-                            <img src="legend_visual_1.jpg" alt="版木の詳細">
-                            <div class="visual-label">彫り込まれた「鬼」の形相</div>
-                        </div>
-                    </div>
-                    <div class="legend-story-text">
-                        <h4 class="verse">「食まば食め 喰わば喰え金剛の 他力の信は よもや止むまじ」</h4>
-                        <div class="story-main">
-                            <p>伝記「嫁脅しの肉付きの面」。姑が嫁を脅そうと鬼の面を被りましたが、面が顔から離れなくなりました。蓮如上人の前で念仏を唱えると、面は肉と共に外れたと伝えられています。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 風景ギャラリー -->
-        <section id="scenery" class="section">
-            <div class="container">
-                <div class="section-title">
-                    <span class="en">Scenery</span>
-                    <h3>四季の情景</h3>
-                </div>
-                <ul class="scenery-gallery" style="list-style:none; display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
-                    <li class="gallery-item">
-                        <img src="sakura.jpg" alt="春の桜" style="width:100%; height:200px; object-fit:cover; border:1px solid #dfbc7a;">
-                        <p>吉崎の丘を染める桜。花びらが舞う春の情景です。</p>
-                    </li>
-                    <li class="gallery-item">
-                        <img src="legend_visual_2.jpg" alt="嫁威肉附面" style="width:100%; height:200px; object-fit:cover; border:1px solid #dfbc7a;">
-                        <p>至宝「肉付きの面」の伝説。今もその版木が残ります。</p>
-                    </li>
-                    <li class="gallery-item">
-                        <img src="winter_yoshizaki.jpg" alt="冬の吉崎" style="width:100%; height:200px; object-fit:cover; border:1px solid #dfbc7a;">
-                        <p>一晩にして景色を変える雪。静寂に包まれた冬の吉崎御坊です。</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 交流掲示板 -->
-        <section id="bbs" class="section dark">
-            <div class="container">
-                <div class="section-title white">
-                    <span class="en">Bulletin Board</span>
-                    <h3>交流掲示板</h3>
-                </div>
-                <div class="bbs-container">
-                    <form id="bbsForm" class="bbs-form" style="max-width:600px; margin:0 auto; display:grid; gap:15px;">
-                        <input type="text" id="userName" placeholder="お名前" required style="padding:12px; background:#111; color:#fff; border:1px solid #333;">
-                        <textarea id="userComment" placeholder="メッセージを入力してください" required style="padding:12px; background:#111; color:#fff; border:1px solid #333; height:120px;"></textarea>
-                        <div class="form-group">
-                            <label for="userImage" style="cursor:pointer; display:inline-block; border:1px dashed #dfbc7a; padding:10px; color:#dfbc7a;">📷 画像を選択</label>
-                            <input type="file" id="userImage" accept="image/*" style="display:none">
-                            <div id="imagePreview" style="margin-top:10px; display:none;"></div>
-                        </div>
-                        <button type="submit" style="padding:15px; background:#dfbc7a; color:#000; font-weight:bold; border:none; cursor:pointer;">投稿する</button>
-                    </form>
-                    <div id="bbsPosts" style="margin-top:40px;"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- アクセスセクション（独自の情緒的な案内図） -->
-        <section id="access" class="section">
-            <div class="container">
-                <div class="section-title">
-                    <span class="en">Access</span>
-                    <h3>アクセス・案内図</h3>
-                </div>
-                <div class="access-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:40px; align-items: start;">
-                    <div class="access-info-box" style="background:#111; padding:40px; border:1px solid #dfbc7a; text-align:left;">
-                        <h4 style="color:#dfbc7a; margin-bottom:20px; font-size:1.4em;">願慶寺（がんけいじ）</h4>
-                        <div class="info-item" style="margin-bottom:20px;">
-                            <p style="opacity:0.6; font-size:0.9em;">住所</p>
-                            <p>〒922-0679 福井県あわら市吉崎１丁目３０２</p>
-                        </div>
-                        <div class="info-item" style="margin-bottom:20px;">
-                            <p style="opacity:0.6; font-size:0.9em;">電話</p>
-                            <p style="font-size:1.4em; font-weight:bold; color:#dfbc7a;">0776-75-1956</p>
-                            <p>住職：和田 重厚</p>
-                        </div>
-                        <a href="https://maps.app.goo.gl/Yc6tqY6eK1T54P64A" target="_blank" style="display:inline-block; margin-top:20px; padding:12px 30px; border:1px solid #dfbc7a; color:#dfbc7a; text-decoration:none;">Googleマップで詳細を見る</a>
-                    </div>
-
-                    <div class="visual-map-container" style="background:#0a0a0a; border:1px solid #dfbc7a; padding:30px; text-align:center;">
-                        <p style="color:#dfbc7a; margin-bottom:20px;">吉崎御坊・願慶寺 周辺案内図</p>
-                        <div class="custom-guide-map" style="position:relative; width:100%; height:350px; background:#000; border:1px solid #222; overflow:hidden;">
-                            <!-- 地形イメージ -->
-                            <div style="position:absolute; bottom:-50px; left:-50px; width:250px; height:250px; background:rgba(223, 188, 122, 0.05); filter:blur(40px); border-radius:50%;"></div>
-                            <div style="position:absolute; bottom:20px; left:20px; color:#dfbc7a; font-size:12px; writing-mode:vertical-rl; opacity:0.5;">北潟湖</div>
-                            <div style="position:absolute; top:20px; right:20px; color:#dfbc7a; font-size:12px; opacity:0.5;">海（日本海）</div>
-                            
-                            <!-- 中心点：願慶寺 -->
-                            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center;">
-                                <div style="width:15px; height:15px; background:#dfbc7a; border-radius:50%; margin:0 auto 10px; box-shadow:0 0 15px #dfbc7a;"></div>
-                                <p style="font-weight:bold; color:#fff; font-size:18px;">願慶寺</p>
-                                <p style="font-size:11px; color:#dfbc7a;">（拝観所・寺務所）</p>
-                            </div>
-
-                            <!-- 蓮如上人像 -->
-                            <div style="position:absolute; top:30%; left:65%;">
-                                <div style="width:7px; height:7px; border:1px solid #dfbc7a; margin-bottom:5px;"></div>
-                                <p style="font-size:11px; color:#999;">蓮如上人銅像</p>
-                            </div>
-
-                            <!-- 御坊跡 -->
-                            <div style="position:absolute; top:35%; left:30%;">
-                                <div style="width:7px; height:7px; border:1px solid #dfbc7a; margin-bottom:5px;"></div>
-                                <p style="font-size:11px; color:#999;">吉崎御坊跡</p>
-                            </div>
-
-                            <!-- 方向案内 -->
-                            <div style="position:absolute; bottom:15px; left:50%; transform:translateX(-50%); color:#444; font-size:10px;">至 参道・駐車場 ▲</div>
-                        </div>
-                        <p style="margin-top:15px; font-size:11px; opacity:0.4;">※この地図は概念図です。正確なルートは地図ボタンをご利用ください。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <script>
-            // 掲示板
-            (function() {
-                const bbsForm = document.getElementById('bbsForm');
-                const bbsPosts = document.getElementById('bbsPosts');
-                const userImage = document.getElementById('userImage');
-                const imagePreview = document.getElementById('imagePreview');
-                let selectedImageBase64 = '';
-                userImage.addEventListener('change', (e) => {
-                    const file = e.target.files[0];
-                    if (file) {
-                        const reader = new FileReader();
-                        reader.onload = (event) => {
-                            selectedImageBase64 = event.target.result;
-                            imagePreview.innerHTML = `<img src="${selectedImageBase64}" style="max-width:200px; border:1px solid #dfbc7a;">`;
-                            imagePreview.style.display = 'block';
-                        };
-                        reader.readAsDataURL(file);
-                    }
-                });
-                const renderPosts = (posts) => {
-                    bbsPosts.innerHTML = posts.map((post) => `
-                        <div class="post-card" style="background:rgba(255,255,255,0.05); padding:25px; margin-bottom:20px; border-left:4px solid #dfbc7a; text-align:left;">
-                            <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(223,188,122,0.1); margin-bottom:10px; padding-bottom:5px;">
-                                <span style="color:#dfbc7a; font-weight:bold;">${escapeHtml(post.name)}</span>
-                                <span style="font-size:12px; opacity:0.5;">${post.date}</span>
-                            </div>
-                            <p style="white-space:pre-wrap;">${escapeHtml(post.comment)}</p>
-                            ${post.image ? `<div style="margin-top:15px;"><img src="${post.image}" style="max-width:100%; height:auto; border:1px solid #333;"></div>` : ''}
-                        </div>
-                    `).join('');
-                };
-                const escapeHtml = (str) => {
-                    const div = document.createElement('div');
-                    div.textContent = str;
-                    return div.innerHTML;
-                };
-                const loadPosts = () => {
-                    const posts = JSON.parse(localStorage.getItem('yoshizakiPosts') || '[]');
-                    renderPosts(posts);
-                };
-                bbsForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const name = document.getElementById('userName').value;
-                    const comment = document.getElementById('userComment').value;
-                    const date = new Date().toLocaleString('ja-JP');
-                    const newPost = { name, comment, date, image: selectedImageBase64 };
-                    const posts = JSON.parse(localStorage.getItem('yoshizakiPosts') || '[]');
-                    posts.unshift(newPost);
-                    localStorage.setItem('yoshizakiPosts', JSON.stringify(posts));
-                    bbsForm.reset();
-                    imagePreview.style.display = 'none';
-                    selectedImageBase64 = '';
-                    renderPosts(posts);
-                });
-                loadPosts();
-            })();
-
-            // 15秒ごとの四季エフェクト
-            (function() {
-                const container = document.getElementById('sakura-container');
-                const hero = document.getElementById('hero');
-                const heroDesc = document.getElementById('hero-desc');
-                function create(type) {
-                    container.innerHTML = '';
-                    for (let i = 0; i < 40; i++) {
-                        const el = document.createElement('div');
-                        el.className = type;
-                        el.style.left = Math.random() * 100 + 'vw';
-                        el.style.animationDelay = Math.random() * 10 + 's';
-                        el.style.animationDuration = (Math.random() * 5 + 10) + 's';
-                        el.style.setProperty('--shake-x', (Math.random() * 200 - 100) + 'px');
-                        container.appendChild(el);
-                    }
-                }
-                function cycle() {
-                    create('sakura');
-                    hero.classList.remove('winter');
-                    heroDesc.textContent = '静寂、湖畔。550年の時を超えて響く念仏の心。';
-                    setTimeout(() => {
-                        create('snow');
-                        hero.classList.add('winter');
-                        heroDesc.textContent = '白銀の静寂。雪中に息づく不滅の信仰。';
-                        setTimeout(cycle, 15000);
-                    }, 15000);
-                }
-                cycle();
-            })();
-        </script>
-    </main>
-
-    <footer style="padding:60px 0; border-top:1px solid #222; text-align:center;">
-        <p>&copy; 2026 吉崎御坊 聖地巡礼保存会 / 願慶寺</p>
-    </footer>
-</body>
-</html>
-```
-
----
-
-### 2. `style.css`（デザイン統合版）
-
-```css
-:root {
-    --bg-color: #000000;
-    --text-color: #e0e0e0;
-    --accent-color: #dfbc7a;
-    --serif: 'Noto Serif JP', '游明朝', 'Yu Mincho', serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: #000; color: var(--text-color); font-family: var(--serif); line-height: 1.8; overflow-x: hidden; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+/* トップ画面 */
 
-header { background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 2px solid var(--accent-color); }
-.header-inner { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; }
-.logo { font-size: 24px; color: var(--accent-color); font-weight: 700; }
-nav ul { display: flex; list-style: none; gap: 20px; }
-nav ul li a { text-decoration: none; color: #fff; font-size: 15px; font-weight: bold; transition: 0.3s; }
-nav ul li a:hover { color: var(--accent-color); }
+.hero{
 
-.hero {
-    height: 100vh;
-    background-image: url('sakura.jpg');
-    background-size: cover;
-    background-position: center !important;
-    background-repeat: no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-image 3s ease-in-out; 
-}
-.hero.winter { background-image: url('winter_yoshizaki.jpg'); }
-.hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle, transparent 20%, #000 100%); z-index: 1; }
-.hero-content { position: relative; z-index: 10; text-align: center; width: 100%; }
-.hero-content h2 { font-size: clamp(36px, 8vw, 84px); text-shadow: 0 0 20px #000; margin-bottom: 10px; }
-.hero-content .sub-title { color: var(--accent-color); font-size: 1.2em; display: block; margin-bottom: 20px; }
+height:300px;
 
-.section { padding: 100px 0; background: #000; }
-.section-title { margin-bottom: 50px; text-align: center; }
-.section-title h3 { font-size: 32px; color: #fff; position: relative; padding-bottom: 20px; }
-.section-title h3::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 1px; background: var(--accent-color); }
+display:flex;
 
-.content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-.image-frame img { width: 100%; border: 1px solid var(--accent-color); }
+flex-direction:column;
 
-.legend-visuals { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.visual-card img { width: 100%; height: 300px; object-fit: cover; border: 1px solid var(--accent-color); }
-.visual-label { padding: 10px; color: var(--accent-color); text-align: center; font-size: 14px; background: #111; }
+justify-content:center;
 
-#sakura-container { position: fixed; inset: 0; pointer-events: none; z-index: 9999; }
-.sakura { position: absolute; background: #FFB7C5; border-radius: 100% 0 100% 0; width: 16px; height: 16px; animation: fall linear infinite; }
-.snow { position: absolute; background: #fff; border-radius: 50%; width: 4px; height: 4px; box-shadow: 0 0 10px #fff; animation: fall linear infinite; }
+align-items:center;
 
-@keyframes fall {
-    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.8; }
-    90% { opacity: 0.8; }
-    100% { transform: translateY(110vh) translateX(var(--shake-x)) rotate(360deg); opacity: 0; }
+background:
+linear-gradient(
+135deg,
+#001f3f,
+#003366);
+
 }
 
-@media (max-width: 768px) {
-    .container { padding: 0 20px; }
-    .header-inner { flex-direction: column; gap: 10px; }
-    .content-grid, .legend-visuals, .access-grid { grid-template-columns: 1fr !important; }
-    .hero { height: 60vh; }
-    .visual-map-container { padding: 15px; }
+/* タイトル */
+
+.hero-title{
+
+font-size:50px;
+
+letter-spacing:8px;
+
+background:
+linear-gradient(
+90deg,
+#00c6ff,
+#0072ff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+text-align:center;
+
+margin:0;
+
 }
-```
+
+/* サブタイトル */
+
+.hero-sub{
+
+font-size:20px;
+
+color:#cccccc;
+
+letter-spacing:3px;
+
+}
+
+/* メニュー */
+
+.menu{
+
+background:#111;
+
+padding:15px;
+
+text-align:center;
+
+}
+
+.menu a{
+
+color:white;
+
+text-decoration:none;
+
+margin:20px;
+
+font-size:18px;
+
+transition:0.3s;
+
+}
+
+.menu a:hover{
+
+color:#00c6ff;
+
+}
+
+/* 内容 */
+
+.content{
+
+padding:40px;
+
+text-align:center;
+
+}
