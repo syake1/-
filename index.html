@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>吉崎御坊 願慶寺 - 歴史と伝説の地 | あわら市</title>
-    <meta name="description" content="蓮如上人ゆかりの地、吉崎御坊の歴史と略年表、「嫁脅しの肉付きの面」の伝説をご紹介します。">
-    <link rel="stylesheet" href="style.css?v=16">
+    <meta name="description" content="蓮如上人ゆかりの地、吉崎御坊の歴史と略年表、「嫁脅しの肉付きの面」の伝説、アクセス情報をご紹介します。">
+    <link rel="stylesheet" href="style.css?v=25">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=游明朝&family=Sawarabi+Mincho&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=游明朝&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -27,10 +27,10 @@
     </header>
 
     <main>
+        <!-- ヒーローセクション（自動切り替え 15s） -->
         <section id="hero" class="hero">
             <div id="sakura-container"></div>
             <div class="hero-overlay"></div>
-            <div class="hero-snow-layer"></div>
             <div class="hero-content">
                 <span class="sub-title">蓮如上人が開いた北陸の聖地</span>
                 <h2 id="hero-title">吉崎御坊 願慶寺</h2>
@@ -38,33 +38,26 @@
             </div>
         </section>
 
+        <!-- 歴史セクション（略年表入り） -->
         <section id="history" class="section">
             <div class="container">
                 <div class="section-title">
                     <span class="en">History</span>
                     <h3>吉崎御坊 願慶寺 略年表</h3>
                 </div>
-                
                 <div class="history-main" style="margin-bottom:60px;">
-                    <div class="text-block" style="margin-bottom:40px; border-left:4px solid #dfbc7a; padding-left:20px;">
-                        <p>吉崎御坊は、文明3年（1471年）に浄土真宗の祖、蓮如上人が建立した寺院であり、北陸一帯の信仰拠点として栄えました。その歴史は数多の変遷を経て、今日まで「嫁威肉附面」の伝説とともに語り継がれています。</p>
+                    <div class="text-block" style="margin-bottom:30px; border-left:4px solid #dfbc7a; padding-left:20px;">
+                        <p>吉崎御坊は、文明3年（1471年）に蓮如上人が建立した寺院であり、北陸の信仰拠点として栄えました。その歩みを資料とともにご紹介します。</p>
                     </div>
-                    
-                    <!-- 年表画像の表示エリア -->
-                    <div class="chronology-frame" style="background:#fefefe; padding:10px; border:2px solid #dfbc7a; box-shadow:0 0 20px rgba(0,0,0,0.5);">
+                    <div class="chronology-frame" style="background:#fefefe; padding:10px; border:2px solid #dfbc7a; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
                         <img src="nenpyo.jpg" alt="吉崎御坊 願慶寺 略年表" style="width:100%; height:auto; display:block;">
-                        <p style="text-align:right; font-size:12px; color:#666; margin-top:10px; padding:0 10px;">出典：福井県史（吉崎御坊 願慶寺 略年表）</p>
-                    </div>
-                </div>
-
-                <div class="content-grid" style="margin-top:60px;">
-                    <div class="text-block">
-                        <p>文明7年（1475年）の蓮如上人吉崎退出から、明治14年の政教分離、そして今日に至るまで、吉崎御坊は念仏の灯火を守り続けてきました。国の史跡として指定された現在の地は、訪れる人々に数世紀にわたる信仰の重みを伝えています。</p>
+                        <p style="text-align:right; font-size:12px; color:#666; margin-top:10px;">資料：福井県史より</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- 伝説セクション -->
         <section id="legend" class="section dark">
             <div class="container">
                 <div class="section-title white">
@@ -85,13 +78,14 @@
                     <div class="legend-story-text">
                         <h4 class="verse">「食まば食め 喰わば喰え金剛の 他力の信は よもや止むまじ」</h4>
                         <div class="story-main">
-                            <p>吉崎御坊 願慶寺に伝わる「嫁威肉附面」の伝説。姑が嫁の参詣を邪魔しようと鬼の面を被って脅しましたが、面が顔から離れなくなりました。蓮如上人の前で懺悔し念仏を唱えたところ、肉と共に面がポロリと外れたと伝えられています。</p>
+                            <p>姑が嫁を脅そうと鬼の面を被りましたが、面が顔から離れなくなりました。蓮如上人の前で念仏を唱えると、面は肉と共に外れたと伝えられています。</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- 風景ギャラリー -->
         <section id="scenery" class="section">
             <div class="container">
                 <div class="section-title">
@@ -101,20 +95,21 @@
                 <ul class="scenery-gallery" style="list-style:none; display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
                     <li class="gallery-item">
                         <img src="sakura.jpg" alt="春の桜" style="width:100%; height:200px; object-fit:cover; border:1px solid #dfbc7a;">
-                        <p>吉崎の丘をピンク色に染める桜。春には多くの参拝客で賑わいます。</p>
+                        <p>吉崎の丘を鮮やかに染める桜。花びらが舞う春の情景です。</p>
                     </li>
                     <li class="gallery-item">
                         <img src="legend_visual_2.jpg" alt="嫁威肉附面" style="width:100%; height:200px; object-fit:cover; border:1px solid #dfbc7a;">
-                        <p>至宝「嫁威肉附面」。伝説を今に伝える貴重な版木です。</p>
+                        <p>寺に伝わる至宝「肉付きの面」。伝説を今に伝える貴重な版木です。</p>
                     </li>
                     <li class="gallery-item">
                         <img src="winter_yoshizaki.jpg" alt="冬の吉崎" style="width:100%; height:200px; object-fit:cover; border:1px solid #dfbc7a;">
-                        <p>北国の雪に覆われた吉崎御坊。一切が白に還る純粋な世界です。</p>
+                        <p>一晩にして景色を変える福井の雪。静寂に包まれた冬の吉崎御坊です。</p>
                     </li>
                 </ul>
             </div>
         </section>
 
+        <!-- 交流掲示板 -->
         <section id="bbs" class="section dark">
             <div class="container">
                 <div class="section-title white">
@@ -138,14 +133,45 @@
                             </label>
                             <div id="imagePreview" class="image-preview" style="margin-top:10px; display:none;"></div>
                         </div>
-                        <button type="submit" class="submit-btn" style="width:100%; padding:15px; background:#dfbc7a; color:#000; border:none; cursor:pointer; font-weight:bold;">旅の思い出を投稿する</button>
+                        <button type="submit" class="submit-btn">旅の思い出を投稿する</button>
                     </form>
-                    <div id="bbsPosts" class="bbs-posts" style="margin-top:30px;"></div>
+                    <div id="bbsPosts" class="bbs-posts"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- アクセス情報（最新：住所・電話・マップ） -->
+        <section id="access" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="en">Access</span>
+                    <h3>アクセス情報</h3>
+                </div>
+                <div class="access-content">
+                    <div class="access-info">
+                        <div class="info-item">
+                            <h4>住所</h4>
+                            <p>〒922-0679 あわら市吉崎１丁目３０２</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>お電話</h4>
+                            <p class="tel">0776-75-1956</p>
+                            <p class="name">住職：和田 重厚</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>位置</h4>
+                            <p>吉崎御坊跡・愿慶寺 境内</p>
+                        </div>
+                    </div>
+                    <div class="access-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.148152504443!2d136.2163464152718!3d36.21832048007421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff8926955555555%3A0x7d9f7d2948719541!2z6aSY5oW25a-677yI5ZCJ5bSO5b6h5Z2K77yI!5e0!3m2!1sja!2sjp!4v1647310000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
         </section>
 
         <script>
+            // 掲示板スクリプト
             (function() {
                 const bbsForm = document.getElementById('bbsForm');
                 const bbsPosts = document.getElementById('bbsPosts');
@@ -166,13 +192,13 @@
                 });
                 const renderPosts = (posts) => {
                     bbsPosts.innerHTML = posts.map((post) => `
-                        <div class="post-card" style="background:rgba(255,255,255,0.05); padding:20px; margin-bottom:20px; border-left:4px solid #dfbc7a;">
-                            <div style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px solid rgba(223,188,122,0.2);">
-                                <span style="color:#dfbc7a; font-weight:bold;">${escapeHtml(post.name)}</span>
-                                <span style="font-size:0.8em; opacity:0.6;">${post.date}</span>
+                        <div class="post-card">
+                            <div class="post-head">
+                                <span class="post-name">${escapeHtml(post.name)}</span>
+                                <span class="post-date">${post.date}</span>
                             </div>
-                            <p style="white-space:pre-wrap;">${escapeHtml(post.comment)}</p>
-                            ${post.image ? `<div style="margin-top:15px;"><img src="${post.image}" style="max-width:100%; height:auto;"></div>` : ''}
+                            <p class="post-text">${escapeHtml(post.comment)}</p>
+                            ${post.image ? `<div class="post-img"><img src="${post.image}"></div>` : ''}
                         </div>
                     `).join('');
                 };
@@ -202,6 +228,7 @@
                 loadPosts();
             })();
 
+            // 15秒ごとの四季エフェクト
             (function() {
                 const container = document.getElementById('sakura-container');
                 const hero = document.getElementById('hero');
@@ -216,9 +243,9 @@
                         const size = type === 'sakura' ? (Math.random() * 10 + 10) : (Math.random() * 5 + 3);
                         el.style.width = size + 'px'; el.style.height = size + 'px';
                         el.style.left = Math.random() * 100 + 'vw';
-                        el.style.animationDelay = Math.random() * 5 + 's';
-                        el.style.animationDuration = (Math.random() * 3 + 4) + 's';
-                        el.style.setProperty('--shake-x', (Math.random() * 200 - 100) + 'px');
+                        el.style.animationDelay = Math.random() * 15 + 's';
+                        el.style.animationDuration = (Math.random() * 6 + 10) + 's';
+                        el.style.setProperty('--shake-x', (Math.random() * 250 - 125) + 'px');
                         container.appendChild(el);
                     }
                 }
@@ -230,8 +257,8 @@
                         createParticles('snow');
                         hero.classList.add('winter');
                         heroDesc.textContent = '白銀の静寂。雪中に息づく不滅の信仰。';
-                        setTimeout(startCycle, 5000);
-                    }, 5000);
+                        setTimeout(startCycle, 15000);
+                    }, 15000);
                 }
                 startCycle();
             })();
