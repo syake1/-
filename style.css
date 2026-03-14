@@ -1,10 +1,9 @@
 :root {
     --bg-color: #000000;
     --text-color: #e0e0e0;
-    --accent-color: #dfbc7a; /* 目立つ明るめの金 */
+    --accent-color: #dfbc7a;
     --dark-bg: #000000;
     --light-text: #ffffff;
-    --crimson: #c63333;
     --serif: 'Noto Serif JP', '游明朝', 'Yu Mincho', serif;
 }
 
@@ -53,7 +52,6 @@ header {
     font-weight: 700;
     letter-spacing: 4px;
     color: var(--accent-color);
-    text-shadow: 0 0 15px rgba(223, 188, 122, 0.5);
 }
 
 nav ul {
@@ -69,83 +67,24 @@ nav ul li a {
     text-decoration: none;
     color: #ffffff;
     font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    position: relative;
     padding: 5px 15px;
-    transition: all 0.3s;
-    border: 1px solid transparent;
 }
 
-nav ul li a:hover {
-    color: var(--accent-color);
-    text-shadow: 0 0 20px var(--accent-color);
-    border: 1px solid var(--accent-color);
-    background: rgba(223, 188, 122, 0.1);
-}
-
-/* Sections */
-.section {
-    padding: 120px 0;
-    background-color: #000000 !important;
-}
-
-.section.dark {
-    background-color: #000000 !important;
-    color: var(--light-text);
-}
-
-.section-title {
-    margin-bottom: 80px;
-    text-align: center;
-}
-
-.section-title span.en {
-    display: block;
-    font-size: 14px;
-    letter-spacing: 5px;
-    color: var(--accent-color);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.section-title h3 {
-    font-size: 40px;
-    letter-spacing: 6px;
-    padding-bottom: 20px;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255,255,255,0.2);
-    position: relative;
-}
-
-.section-title h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background-color: var(--accent-color);
-}
-
-/* Hero Section */
+/* Hero Section - スマホ中央配置の修正 */
 .hero {
     height: 100vh;
+    min-height: 600px;
     background-image: url('hero_yoshizaki.png');
     background-size: cover;
-    background-position: center center;
+    background-position: center center !important; /* 絶対に中央 */
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* スマホでの挙動安定 */
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     text-align: center;
-    transition: background-image 2s ease-in-out, filter 2s ease;
-}
-
-.hero.winter {
-    filter: brightness(1.2) contrast(0.9) saturate(0.2) sepia(20%) hue-rotate(180deg);
 }
 
 .hero-overlay {
@@ -154,178 +93,69 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
-    transition: opacity 2s ease;
-}
-
-.hero-snow-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.4) 0%, transparent 40%),
-        radial-gradient(circle at 80% 90%, rgba(255,255,255,0.3) 0%, transparent 30%),
-        radial-gradient(circle at 50% 100%, rgba(255,255,255,0.5) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-    pointer-events: none;
-    z-index: 5;
-}
-
-.hero.winter .hero-snow-layer {
-    opacity: 1;
-}
-
-.hero.winter .hero-overlay {
-    background: radial-gradient(circle, rgba(200,210,255,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 10;
-}
-
-.hero-content .sub-title {
-    display: block;
-    font-size: 20px;
-    letter-spacing: 8px;
-    margin-bottom: 20px;
-    color: var(--accent-color);
-    opacity: 0;
-    animation: fadeInUp 1s forwards 0.5s;
+    width: 100%;
+    padding: 0 20px;
 }
 
 .hero-content h2 {
-    font-size: 96px;
-    letter-spacing: 20px;
+    font-size: clamp(32px, 8vw, 96px); /* 画面幅に合わせて自動調整 */
+    letter-spacing: 0.1em;
     font-weight: 700;
-    margin-bottom: 40px;
-    opacity: 0;
-    animation: fadeInUp 1s forwards 0.8s;
-    text-shadow: 0 0 30px rgba(0,0,0,0.8);
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
-/* History Section */
+/* History / Legend Sections */
+.section {
+    padding: 100px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.section-title h3 {
+    font-size: clamp(24px, 5vw, 40px);
+    color: var(--accent-color);
+}
+
 .content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 40px;
     align-items: center;
-}
-
-.image-frame {
-    position: relative;
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 0 20px rgba(223, 188, 122, 0.2);
 }
 
 .image-frame img {
     width: 100%;
     height: auto;
-    display: block;
+    border: 1px solid var(--accent-color);
 }
 
-/* Legend Section */
-.legend-container {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-}
-
+/* Legend Visuals */
 .legend-visuals {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.visual-card {
-    background: #000;
-    border: 2px solid var(--accent-color);
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 0 30px rgba(223, 188, 122, 0.1);
+    gap: 20px;
 }
 
 .visual-card img {
     width: 100%;
-    height: 480px;
+    height: 300px;
     object-fit: cover;
-    display: block;
-    filter: brightness(0.85);
-    transition: filter 0.5s, transform 0.5s;
 }
 
-.visual-card:hover img {
-    filter: brightness(1);
-    transform: scale(1.02);
-}
-
-.visual-label {
-    background: rgba(0, 0, 0, 0.85);
-    color: var(--accent-color);
-    padding: 15px 20px;
-    font-size: 16px;
-    text-align: center;
-    border-top: 1px solid var(--accent-color);
-    letter-spacing: 2px;
-    font-weight: 700;
-}
-
-.legend-story-text {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.verse {
-    font-size: 26px !important;
-    color: #fff !important;
-    text-align: center;
-    margin-bottom: 50px !important;
-    line-height: 1.8;
-    text-shadow: 0 0 15px rgba(255,255,255,0.3);
-}
-
-.story-main p {
-    font-size: 18px;
-    line-height: 2.2;
-    margin-bottom: 30px;
-    color: #ddd;
-}
-
-.han-details {
-    background: rgba(223, 188, 122, 0.05);
-    padding: 40px;
-    border: 1px solid rgba(223, 188, 122, 0.2);
-    margin: 40px 0;
-}
-
-.han-details h5 {
-    color: var(--accent-color);
-    font-size: 20px;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.han-details ul {
-    list-style: none;
-}
-
-.han-details li {
-    font-size: 17px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    padding-bottom: 10px;
-}
-
-.han-details li strong {
-    color: var(--accent-color);
-    margin-right: 10px;
-}
-
-/* BBS Section */
+/* BBS Section - 豪華な掲示板 */
 .bbs-container {
     max-width: 800px;
     margin: 0 auto;
@@ -333,162 +163,65 @@ nav ul li a:hover {
 
 .bbs-form {
     background: rgba(223, 188, 122, 0.05);
-    padding: 40px;
-    border: 2px solid var(--accent-color);
-    margin-bottom: 60px;
+    padding: 30px;
+    border: 1px solid var(--accent-color);
+    margin-bottom: 50px;
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: var(--accent-color);
-    font-weight: 700;
-    font-size: 16px;
 }
 
-.form-group input[type="text"],
-.form-group textarea {
+.form-group input, .form-group textarea {
     width: 100%;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    background: rgba(255,255,255,0.1);
     border: 1px solid rgba(223, 188, 122, 0.3);
     color: #fff;
     font-family: inherit;
-    font-size: 16px;
-    transition: all 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    background: rgba(223, 188, 122, 0.1);
-    box-shadow: 0 0 10px rgba(223, 188, 122, 0.2);
-}
-
-.file-label {
-    display: inline-block;
-    padding: 12px 24px;
-    background: rgba(223, 188, 122, 0.1);
-    border: 1px dashed var(--accent-color);
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 14px;
-}
-
-.file-label:hover {
-    background: rgba(223, 188, 122, 0.2);
-}
-
-.image-preview {
-    margin-top: 15px;
-    max-width: 200px;
-    display: none;
-    border: 1px solid var(--accent-color);
-    padding: 5px;
-}
-
-.image-preview img {
-    width: 100%;
-    display: block;
 }
 
 .submit-btn {
     width: 100%;
-    padding: 18px;
+    padding: 15px;
     background: var(--accent-color);
     color: #000;
-    font-size: 18px;
-    font-weight: 700;
     border: none;
+    font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(223, 188, 122, 0.4);
-    transition: all 0.3s;
-    font-family: var(--serif);
-}
-
-.submit-btn:hover {
-    background: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(223, 188, 122, 0.6);
-}
-
-.bbs-posts {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
 }
 
 .post-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin-bottom: 20px;
     border-left: 4px solid var(--accent-color);
-    padding: 30px;
-    animation: fadeInUp 0.8s forwards;
-    transition: transform 0.3s;
-}
-
-.post-card:hover {
-    transform: translateX(5px);
-    background: rgba(255, 255, 255, 0.05);
+    animation: fadeInUp 0.5s ease-out;
 }
 
 .post-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-bottom: 1px solid rgba(223, 188, 122, 0.2);
-    padding-bottom: 10px;
 }
 
-.post-name {
-    color: var(--accent-color);
-    font-weight: 700;
-    font-size: 18px;
-}
-
-.post-date {
-    font-size: 14px;
-    color: #888;
-}
-
-.post-text {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #eee;
-    white-space: pre-wrap;
-}
-
-.post-image {
-    margin-top: 20px;
-    max-width: 100%;
-    overflow: hidden;
-    border: 1px solid rgba(223, 188, 122, 0.2);
-}
-
-.post-image img {
-    max-width: 100%;
-    display: block;
-    height: auto;
-}
+.post-name { color: var(--accent-color); font-weight: 700; }
+.post-date { font-size: 0.8em; opacity: 0.6; }
 
 /* Animations */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Sakura / Snow Effects */
+/* Sakura/Snow */
 #sakura-container {
     position: fixed;
     top: 0;
@@ -497,152 +230,41 @@ nav ul li a:hover {
     height: 100%;
     pointer-events: none;
     z-index: 2000;
-    overflow: hidden;
 }
 
-.sakura {
+.sakura, .snow {
     position: absolute;
-    background: #FFB7C5;
-    border-radius: 100% 0 100% 0;
-    box-shadow: 0 0 10px rgba(255, 183, 197, 0.8);
-    opacity: 0;
     top: -50px;
-    animation-name: fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-.snow {
-    position: absolute;
-    background: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
-    opacity: 0;
-    top: -50px;
-    animation-name: fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    filter: blur(1px);
-}
-
-.snow.sharp {
-    filter: none;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    animation: fall linear infinite;
 }
 
 @keyframes fall {
-    0% { opacity: 0; top: -10%; }
+    0% { top: -10%; opacity: 0; }
     10% { opacity: 1; }
     90% { opacity: 1; }
-    100% { opacity: 0; top: 100%; transform: translateX(var(--shake-x)) rotateX(360deg) rotateY(360deg); }
+    100% { top: 100%; transform: translateX(var(--shake-x)) rotate(360deg); }
 }
 
+/* Footer */
 footer {
-    background-color: #000;
-    border-top: 2px solid var(--accent-color);
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
+    border-top: 1px solid var(--accent-color);
 }
 
-footer address {
-    margin-top: 10px;
-    font-style: normal;
-    color: #888;
-}
-
-/* Media Queries (Mobile Optimization) */
-@media (max-width: 1024px) {
-    .hero-content h2 {
-        font-size: 72px;
-    }
-}
-
+/* Media Queries (Mobile) */
 @media (max-width: 768px) {
-    .header-inner {
-        flex-direction: column;
-        padding: 15px 20px;
-    }
+    .header-inner { flex-direction: column; padding: 10px; }
+    .logo { font-size: 24px; margin-bottom: 10px; }
+    nav ul { gap: 5px; }
+    nav ul li { margin-left: 10px; }
+    nav ul li a { font-size: 14px; padding: 5px; }
 
-    .logo {
-        font-size: 24px;
-        letter-spacing: 2px;
-        margin-bottom: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    nav ul li {
-        margin-left: 0;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-        padding: 5px 10px;
-        letter-spacing: 1px;
-    }
-
-    .hero-content h2 {
-        font-size: 40px;
-        letter-spacing: 8px;
-        margin-bottom: 20px;
-    }
-
-    .hero-content .sub-title {
-        font-size: 16px;
-        letter-spacing: 4px;
-    }
-
-    .section {
-        padding: 80px 0;
-    }
-
-    .section-title h3 {
-        font-size: 28px;
-    }
-
-    .content-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .legend-visuals {
+    .content-grid, .legend-visuals {
         grid-template-columns: 1fr;
     }
-
-    .visual-card img {
-        height: 300px;
-    }
-
-    .verse {
-        font-size: 18px !important;
-        margin-bottom: 30px !important;
-    }
-
-    .story-main p {
-        font-size: 16px;
-    }
-
-    .bbs-form {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h2 {
-        font-size: 32px;
-        letter-spacing: 4px;
-    }
-
-    .container {
-        padding: 0 20px;
-    }
-
+    
     .hero {
-        height: 70vh;
-        background-position: center center !important;
+        height: 60vh; /* スマホでは高さを少し抑える */
     }
 }
