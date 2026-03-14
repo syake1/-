@@ -90,10 +90,9 @@ border:1px solid var(--accent-color);
 /* ===== セクション ===== */
 
 .section{
-padding:120px 0;
+padding: 60px 0;  /* 半分に詰めると、テンポよく読めるようになります */
 background:#000;
 }
-
 .section-title{
 margin-bottom:60px;
 text-align:center;
