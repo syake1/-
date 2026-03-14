@@ -1,194 +1,65 @@
-/* 余白削除 */
-
-body{
-
-margin:0;
-
-padding:0;
-
-background:#0b0f1a;
-
-color:white;
-
-font-family:
-
-"Yu Gothic",
-
-"Meiryo",
-
-sans-serif;
-
+:root {
+    --bg-color: #000000;
+    --accent-color: #dfbc7a; /* きらびやかな金色 */
+    --text-primary: #ffffff; /* はっきりとした白 */
+    --serif: 'Noto Serif JP', '游明朝', 'Yu Mincho', serif;
 }
 
-/* トップ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-.hero{
-
-height:450px;
-
-background:
-
-linear-gradient(
-rgba(0,0,0,0.5),
-rgba(0,0,0,0.8)
-),
-
-url("https://images.unsplash.com/photo-1545165375-1a360b9c1f3a");
-
-background-size:cover;
-
-background-position:center;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
+body { 
+    background-color: #000000 !important; 
+    color: #ffffff !important; /* 全体の文字を白に強制 */
+    font-family: var(--serif); 
+    line-height: 1.8; 
 }
 
-/* タイトル */
-
-.hero-text h1{
-
-font-size:70px;
-
-margin:0;
-
-letter-spacing:15px;
-
-text-shadow:
-
-0 0 15px #00aaff,
-
-0 0 30px #0066ff;
-
+/* 文字が黒くなるのを防ぐための強制設定 */
+p, span, li, address, div {
+    color: #ffffff !important;
 }
 
-/* 英語 */
-
-.hero-text p{
-
-font-size:22px;
-
-letter-spacing:6px;
-
-color:#dddddd;
-
+/* 見出しは華やかな金色に */
+h1, h2, h3, h4, .accent-text {
+    color: var(--accent-color) !important;
+    text-shadow: 0 0 5px rgba(223, 188, 122, 0.3);
 }
 
-/* メニュー */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-nav{
+header { background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--accent-color); position: fixed; top:0; width:100%; z-index:1000; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; }
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav ul li a { color: #ffffff !important; text-decoration: none; font-weight: bold; }
+nav ul li a:hover { color: var(--accent-color) !important; }
 
-background:#020617;
+/* ヒーロー */
+.hero {
+    height: 100vh;
+    background-image: url('sakura.jpg');
+    background-size: cover;
+    background-position: center !important;
+    transition: background-image 3s ease-in-out;
+    display: flex; align-items: center; justify-content: center;
+}
+.hero.winter { background-image: url('winter_yoshizaki.jpg'); }
+.hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle, transparent 20%, #000 100%); }
 
-padding:20px;
+.section { padding: 100px 0; background: #000; border-bottom: 1px solid #111; }
+.section-title { text-align: center; margin-bottom: 50px; }
 
-text-align:center;
+/* 粒子エフェクト */
+#sakura-container { position: fixed; inset: 0; pointer-events: none; z-index: 9999; }
+.sakura { position: absolute; background: #FFB7C5; border-radius: 100% 0 100% 0; width: 15px; height: 15px; animation: fall linear infinite; }
+.snow { position: absolute; background: #fff; border-radius: 50%; width: 5px; height: 5px; box-shadow: 0 0 10px #fff; animation: fall linear infinite; }
 
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    100% { transform: translateY(110vh) translateX(var(--shake-x)) rotate(360deg); opacity: 0; }
 }
 
-nav a{
-
-color:white;
-
-text-decoration:none;
-
-margin:30px;
-
-font-size:20px;
-
-font-weight:bold;
-
-transition:0.3s;
-
-}
-
-nav a:hover{
-
-color:#00aaff;
-
-}
-
-/* 内容 */
-
-main{
-
-max-width:1000px;
-
-margin:auto;
-
-padding:60px 20px;
-
-text-align:center;
-
-}
-
-main h2{
-
-font-size:34px;
-
-color:#00aaff;
-
-}
-
-main p{
-
-font-size:18px;
-
-line-height:1.8;
-
-}
-
-/* フッター */
-
-footer{
-
-background:black;
-
-padding:25px;
-
-text-align:center;
-
-color:#888;
-
-}
-
-/* スマホ */
-
-@media(max-width:700px){
-
-.hero{
-
-height:300px;
-
-}
-
-.hero-text h1{
-
-font-size:38px;
-
-letter-spacing:5px;
-
-}
-
-.hero-text p{
-
-font-size:16px;
-
-}
-
-nav a{
-
-display:block;
-
-margin:12px;
-
-font-size:18px;
-
-}
-
+@media (max-width: 768px) {
+    .header-inner { flex-direction: column; padding: 10px; }
+    .access-grid { grid-template-columns: 1fr !important; }
 }
