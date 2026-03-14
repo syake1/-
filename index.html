@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>吉崎御坊 願慶寺 - 歴史と伝説の地 | あわら市</title>
     <meta name="description" content="蓮如上人ゆかりの地、吉崎御坊の歴史と「嫁脅しの肉付きの面」の伝説をご紹介します。">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=11">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=游明朝&family=Sawarabi+Mincho&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -47,7 +47,6 @@
                 <div class="content-grid">
                     <div class="text-block">
                         <p>吉崎御坊は、文明3年（1471年）に浄土真宗の祖、蓮如上人が越前国吉崎に建立した寺院です。比叡山からの迫害を逃れた蓮如上人が、この地を布教の拠点としたことで、北陸一帯に広大な信仰が広がりました。</p>
-                        <p>吉崎は、北を北潟湖、南を日本海に挟まれた小高い山にあり、風光明媚な景色が広がる場所です。</p>
                         <p>現在は国の史跡に指定され、蓮如上人の銅像や本堂跡が残されており、この地を訪れる人々に当時の熱い信仰と風情を伝えています。</p>
                     </div>
                     <div class="image-frame">
@@ -78,8 +77,7 @@
                     <div class="legend-story-text">
                         <h4 class="verse">「食まば食め 喰わば喰え金剛の 他力の信は よもや止むまじ」</h4>
                         <div class="story-main">
-                            <p>吉崎御坊 願慶寺に伝わる「嫁威肉附面（よめおどしにくつきのめん）」の伝説。それは単なる恐ろしい話ではなく、真実の信心を伝える歴史の証です。</p>
-                            <p>姑が嫁の参詣を邪魔しようと鬼の面を被って脅しましたが、面が顔から離れなくなりました。蓮如上人の前で懺悔し念仏を唱えたところ、肉と共に面がポロリと外れたと伝えられています。</p>
+                            <p>吉崎御坊 願慶寺に伝わる「嫁威肉附面（よめおどしにくつきのめん）」の伝説。姑が嫁の参詣を邪魔しようと鬼の面を被って脅しましたが、面が顔から離れなくなりました。蓮如上人の前で懺悔し念仏を唱えたところ、肉と共に面がポロリと外れたと伝えられています。</p>
                         </div>
                     </div>
                 </div>
@@ -94,15 +92,15 @@
                 </div>
                 <ul class="scenery-gallery" style="list-style:none; display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
                     <li class="gallery-item">
-                        <div style="background:#333; height:200px; display:flex; align-items:center; justify-content:center;">春の桜</div>
+                        <img src="hero_yoshizaki.png" alt="春の桜" style="width:100%; height:200px; object-fit:cover; border:1px solid #dfbc7a;">
                         <p>吉崎の丘をピンク色に染める桜。春には多くの参拝客で賑わいます。</p>
                     </li>
                     <li class="gallery-item">
-                        <div style="background:#333; height:200px; display:flex; align-items:center; justify-content:center;">北潟湖の夕映え</div>
-                        <p>鏡のような湖面に沈む夕陽。静寂の中に霊性が宿る瞬間です。</p>
+                        <img src="legend_visual_2.jpg" alt="嫁威肉附面" style="width:100%; height:200px; object-fit:cover; border:1px solid #dfbc7a;">
+                        <p>吉崎御坊 願慶寺に伝わる至宝。伝説を今に伝える貴重な版木です。</p>
                     </li>
                     <li class="gallery-item">
-                        <div style="background:#333; height:200px; display:flex; align-items:center; justify-content:center;">冬のしじま</div>
+                        <img src="winter_yoshizaki.jpg" alt="冬の吉崎" style="width:100%; height:200px; object-fit:cover; border:1px solid #dfbc7a;">
                         <p>北国の雪に覆われた吉崎御坊。一切が白に還る純粋な世界です。</p>
                     </li>
                 </ul>
@@ -205,28 +203,42 @@
                 loadPosts();
             })();
 
-            // 粒子エフェクト
             (function() {
                 const container = document.getElementById('sakura-container');
-                const particleCount = 50;
-                let currentType = 'sakura';
-                for (let i = 0; i < particleCount; i++) { createParticle(currentType); }
-                function createParticle(type) {
-                    const el = document.createElement('div');
-                    el.className = type;
-                    const size = type === 'sakura' ? (Math.random() * 10 + 10) : (Math.random() * 5 + 3);
-                    el.style.width = size + 'px'; el.style.height = size + 'px';
-                    el.style.left = Math.random() * 100 + 'vw';
-                    el.style.animationDelay = Math.random() * 10 + 's';
-                    el.style.animationDuration = (Math.random() * 5 + 5) + 's';
-                    el.style.setProperty('--shake-x', (Math.random() * 200 - 100) + 'px');
-                    container.appendChild(el);
+                const hero = document.getElementById('hero');
+                const heroDesc = document.getElementById('hero-desc');
+                const particleCount = 40;
+                
+                function clearParticles() { container.innerHTML = ''; }
+
+                function createParticles(type) {
+                    clearParticles();
+                    for (let i = 0; i < particleCount; i++) {
+                        const el = document.createElement('div');
+                        el.className = type;
+                        const size = type === 'sakura' ? (Math.random() * 10 + 10) : (Math.random() * 5 + 3);
+                        el.style.width = size + 'px';
+                        el.style.height = size + 'px';
+                        el.style.left = Math.random() * 100 + 'vw';
+                        el.style.animationDelay = Math.random() * 5 + 's';
+                        el.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                        el.style.setProperty('--shake-x', (Math.random() * 200 - 100) + 'px');
+                        container.appendChild(el);
+                    }
                 }
-                setTimeout(() => {
-                    currentType = 'snow';
-                    document.getElementById('hero').classList.add('winter');
-                    document.getElementById('hero-desc').textContent = '白銀の静寂。雪中に息づく不滅の信仰。';
-                }, 20000);
+
+                function startCycle() {
+                    createParticles('sakura');
+                    hero.classList.remove('winter');
+                    heroDesc.textContent = '静寂、湖畔。550年の時を超えて響く念仏の心。';
+                    setTimeout(() => {
+                        createParticles('snow');
+                        hero.classList.add('winter');
+                        heroDesc.textContent = '白銀の静寂。雪中に息づく不滅の信仰。';
+                        setTimeout(startCycle, 5000);
+                    }, 5000);
+                }
+                startCycle();
             })();
         </script>
     </main>
