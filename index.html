@@ -1,250 +1,48 @@
-ご不便をおかけして申し訳ありません！文字が背景に沈まないよう、**「華やかな金色」と「はっきりとした白」**を使い、お寺の格式にふさわしい豪華なデザインに調整しました。
-
-### ✨ 改善したポイント
-1.  **華やかな色彩**: 見出しや重要な文字をすべて**「輝く金色（ゴールド）」**にし、読みやすく、かつ高級感のある（華やかな）見た目にしました。
-2.  **文字の絶対視認性**: `p`タグや`span`タグなどの全ての文章に「白」を強制し、絶対に黒くならないように設定しました。
-3.  **伝説の完全復元**: 嫁脅しの肉付き面のストーリーを、最も詳しく味わい深い内容で書き直しました。
-
----
-
-### 1. `index.html`（華やかな金文字・伝説完全版）
-
-```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>吉崎御坊 願慶寺 - 歴史と伝説の地 | あわら市</title>
-    <meta name="description" content="蓮如上人ゆかりの地、吉崎御坊の歴史と略年表、「嫁脅しの肉付きの面」の伝説、アクセス情報をご紹介します。">
-    <link rel="stylesheet" href="style.css?v=60">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=游明朝&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>吉崎御坊願慶寺</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <header>
-        <div class="header-inner">
-            <h1 class="logo" style="color: #dfbc7a;">吉崎御坊 願慶寺</h1>
-            <nav>
-                <ul>
-                    <li><a href="#history">歴史</a></li>
-                    <li><a href="#legend">伝説</a></li>
-                    <li><a href="#scenery">風景</a></li>
-                    <li><a href="#bbs">掲示板</a></li>
-                    <li><a href="#access">アクセス</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main>
-        <!-- ヒーローセクション（自動切り替え 15s） -->
-        <section id="hero" class="hero">
-            <div id="sakura-container"></div>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <span class="sub-title" style="color: #dfbc7a; text-shadow: 0 0 10px rgba(223,188,122,0.5);">蓮如上人が開いた北陸の聖地</span>
-                <h2 id="hero-title" style="color: #fff;">吉崎御坊 願慶寺</h2>
-                <p id="hero-desc" style="color: #fff; font-size: 1.2em;">静寂、湖畔。550年の時を超えて響く念仏の心。</p>
-            </div>
-        </section>
+<header class="hero">
 
-        <!-- 歴史セクション（略年表入り） -->
-        <section id="history" class="section">
-            <div class="container">
-                <div class="section-title">
-                    <span class="en" style="color: #dfbc7a;">History</span>
-                    <h3 style="color: #dfbc7a;">吉崎御坊 願慶寺 略年表</h3>
-                </div>
-                <div class="history-main">
-                    <div class="text-block" style="border-left:4px solid #dfbc7a; padding-left:20px; margin-bottom: 30px;">
-                        <p style="color: #ffffff; font-size: 1.1em; line-height: 2;">蓮如上人が建立した北陸一帯の信仰拠点、吉崎御坊。その550年に及ぶ歴史を、貴重な資料とともに振り返ります。</p>
-                    </div>
-                    <div class="chronology-frame" style="background:#fff; padding:15px; border:3px solid #dfbc7a; box-shadow: 0 0 30px rgba(223,188,122,0.3);">
-                        <img src="nenpyo.jpg" alt="吉崎御坊 願慶寺 略年表" style="width:100%; height:auto; display:block;">
-                        <p style="text-align:right; font-size:14px; color:#000; margin-top:10px; font-weight: bold;">出典：福井県史</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<h1 class="hero-title">
+吉崎御坊願慶寺
+</h1>
 
-        <!-- 伝説セクション（詳述を復元） -->
-        <section id="legend" class="section dark">
-            <div class="container">
-                <div class="section-title">
-                    <span class="en" style="color: #dfbc7a;">The Legend</span>
-                    <h3 style="color: #dfbc7a;">嫁脅しの肉付きの面</h3>
-                </div>
-                <div class="legend-container">
-                    <div class="legend-visuals">
-                        <div class="visual-card"><img src="legend_visual_2.jpg" alt="版木"><div class="visual-label" style="color: #dfbc7a;">嫁威肉附面 版木（全体）</div></div>
-                        <div class="visual-card"><img src="legend_visual_1.jpg" alt="詳細"><div class="visual-label" style="color: #dfbc7a;">彫り込まれた鬼の形相</div></div>
-                    </div>
-                    <div class="legend-story-text" style="background: rgba(223,188,122,0.05); padding: 40px; border: 1px solid rgba(223,188,122,0.2); margin-top: 40px;">
-                        <h4 class="verse" style="color: #dfbc7a; font-size: 1.5em; text-align: center; margin-bottom: 30px; border-bottom: 1px solid rgba(223,188,122,0.3); padding-bottom: 20px;">「食まば食め 喰わば喰え金剛の 他力の信は よもや止むまじ」</h4>
-                        <div class="story-main" style="color: #ffffff; line-height: 2.2; font-size: 1.1em;">
-                            <p>吉崎御坊 願慶寺に伝わる「嫁威肉附面（よめおどしにくつきのめん）」の伝説。姑（しゅうとめ）が、嫁の熱心な参詣を邪魔しようと鬼の面を被って藪の中から脅しましたが、その面が顔に吸い付いて離れなくなってしまいました。</p>
-                            <p style="margin-top: 20px;">嫁と共に蓮如上人の前で心から懺悔し念仏を唱えたところ、肉と共に面がポロリと外れたと伝えられています。人間の深い「業」と、それを救う念仏の力を今に伝えています。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<p class="hero-sub">
+歴史と文化を伝えるWEBサイト
+</p>
 
-        <!-- 風景ギャラリー -->
-        <section id="scenery" class="section">
-            <div class="container">
-                <div class="section-title"><span class="en" style="color: #dfbc7a;">Scenery</span><h3 style="color: #dfbc7a;">四季の情景</h3></div>
-                <ul class="scenery-gallery" style="list-style:none; display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
-                    <li class="gallery-item">
-                        <img src="sakura.jpg" alt="春" style="width:100%; height:250px; object-fit:cover; border:1px solid #dfbc7a;">
-                        <p style="color: #dfbc7a; margin-top: 10px; font-weight: bold;">春の情景：舞い散る桜</p>
-                    </li>
-                    <li class="gallery-item">
-                        <img src="legend_visual_2.jpg" alt="面" style="width:100%; height:250px; object-fit:cover; border:1px solid #dfbc7a;">
-                        <p style="color: #dfbc7a; margin-top: 10px; font-weight: bold;">至宝：嫁脅しの肉付きの面</p>
-                    </li>
-                    <li class="gallery-item">
-                        <img src="winter_yoshizaki.jpg" alt="冬" style="width:100%; height:250px; object-fit:cover; border:1px solid #dfbc7a;">
-                        <p style="color: #dfbc7a; margin-top: 10px; font-weight: bold;">冬の情景：白銀の吉崎</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
+</header>
 
-        <!-- アクセス情報 -->
-        <section id="access" class="section">
-            <div class="container">
-                <div class="section-title"><span class="en" style="color: #dfbc7a;">Access</span><h3 style="color: #dfbc7a;">アクセス・案内図</h3></div>
-                <div class="access-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap:40px;">
-                    <div class="access-info-box" style="background:#111; padding:40px; border:2px solid #dfbc7a; color: #fff;">
-                        <h4 style="color:#dfbc7a; font-size:1.6em; margin-bottom:20px;">願慶寺（がんけいじ）</h4>
-                        <p style="margin-bottom: 10px;"><strong style="color: #dfbc7a;">住所：</strong> 〒922-0679 あわら市吉崎１丁目３０２</p>
-                        <p style="margin-bottom: 20px;"><strong style="color: #dfbc7a;">電話：</strong> <span style="font-size: 1.5em; font-weight: bold;">0776-75-1956</span></p>
-                        <p style="margin-bottom: 30px;"><strong style="color: #dfbc7a;">住職：</strong> 和田 重厚</p>
-                        <a href="https://maps.app.goo.gl/Yc6tqY6eK1T54P64A" target="_blank" style="display:inline-block; padding:15px 30px; background:#dfbc7a; color:#000; text-decoration:none; font-weight:bold;">Googleマップを開く</a>
-                    </div>
-                    <!-- 案内図 -->
-                    <div class="visual-map-container" style="border:2px solid #dfbc7a; padding: 20px; background: #000;">
-                        <p style="color: #dfbc7a; margin-bottom: 15px;">吉崎御坊・願慶寺 周辺ガイドマップ</p>
-                        <div class="custom-guide-map" style="position:relative; width:100%; height:300px; background:#050505; overflow:hidden;">
-                            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); text-align:center;">
-                                <div style="width:15px; height:15px; background:#dfbc7a; border-radius:50%; margin:0 auto 5px; box-shadow:0 0 15px #dfbc7a;"></div>
-                                <p style="color:#fff; font-weight:bold; font-size:1.2em;">願慶寺</p>
-                            </div>
-                            <div style="position:absolute; bottom:20px; left:20px; color:#dfbc7a; font-size:12px; writing-mode:vertical-rl;">北潟湖</div>
-                            <div style="position:absolute; top:20px; right:20px; color:#dfbc7a; font-size:12px;">日本海</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<nav class="menu">
 
-        <script>
-            // 15秒四季サイクル
-            (function(){
-                const hero = document.getElementById('hero');
-                const heroDesc = document.getElementById('hero-desc');
-                const container = document.getElementById('sakura-container');
-                function create(type){
-                    container.innerHTML = '';
-                    for(let i=0; i<40; i++){
-                        const el = document.createElement('div'); el.className = type;
-                        el.style.left = Math.random()*100+'vw'; el.style.animationDelay = Math.random()*10+'s';
-                        el.style.setProperty('--shake-x', (Math.random()*200-100)+'px');
-                        container.appendChild(el);
-                    }
-                }
-                function cycle(){
-                    create('sakura'); hero.classList.remove('winter');
-                    heroDesc.textContent = '静寂、湖畔。550年の時を超えて響く念仏の心。';
-                    setTimeout(() => {
-                        create('snow'); hero.classList.add('winter');
-                        heroDesc.textContent = '白銀の静寂。雪中に息づく不滅の信仰。';
-                        setTimeout(cycle, 15000);
-                    }, 15000);
-                }
-                cycle();
-            })();
-        </script>
-    </main>
+<a href="#">トップ</a>
+<a href="#">歴史</a>
+<a href="#">アクセス</a>
+<a href="#">お問い合わせ</a>
 
-    <footer style="padding:40px; text-align:center; border-top:1px solid #333;">
-        <p style="color: #dfbc7a;">&copy; 2026 吉崎御坊 聖地巡礼保存会 / 願慶寺</p>
-    </footer>
+</nav>
+
+<section class="content">
+
+<h2>ようこそ</h2>
+
+<p>
+吉崎御坊願慶寺の紹介サイトです。
+歴史や見どころなどを紹介しています。
+</p>
+
+</section>
+
 </body>
 </html>
-```
-
----
-
-### 2. `style.css`（文字を絶対に黒くしない・華やか設定）
-
-```css
-:root {
-    --bg-color: #000000;
-    --accent-color: #dfbc7a; /* きらびやかな金色 */
-    --text-primary: #ffffff; /* はっきりとした白 */
-    --serif: 'Noto Serif JP', '游明朝', 'Yu Mincho', serif;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body { 
-    background-color: #000000 !important; 
-    color: #ffffff !important; /* 全体の文字を白に強制 */
-    font-family: var(--serif); 
-    line-height: 1.8; 
-}
-
-/* 文字が黒くなるのを防ぐための強制設定 */
-p, span, li, address, div {
-    color: #ffffff !important;
-}
-
-/* 見出しは華やかな金色に */
-h1, h2, h3, h4, .accent-text {
-    color: var(--accent-color) !important;
-    text-shadow: 0 0 5px rgba(223, 188, 122, 0.3);
-}
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-header { background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--accent-color); position: fixed; top:0; width:100%; z-index:1000; }
-.header-inner { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; }
-nav ul { display: flex; list-style: none; gap: 20px; }
-nav ul li a { color: #ffffff !important; text-decoration: none; font-weight: bold; }
-nav ul li a:hover { color: var(--accent-color) !important; }
-
-/* ヒーロー */
-.hero {
-    height: 100vh;
-    background-image: url('sakura.jpg');
-    background-size: cover;
-    background-position: center !important;
-    transition: background-image 3s ease-in-out;
-    display: flex; align-items: center; justify-content: center;
-}
-.hero.winter { background-image: url('winter_yoshizaki.jpg'); }
-.hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle, transparent 20%, #000 100%); }
-
-.section { padding: 100px 0; background: #000; border-bottom: 1px solid #111; }
-.section-title { text-align: center; margin-bottom: 50px; }
-
-/* 粒子エフェクト */
-#sakura-container { position: fixed; inset: 0; pointer-events: none; z-index: 9999; }
-.sakura { position: absolute; background: #FFB7C5; border-radius: 100% 0 100% 0; width: 15px; height: 15px; animation: fall linear infinite; }
-.snow { position: absolute; background: #fff; border-radius: 50%; width: 5px; height: 5px; box-shadow: 0 0 10px #fff; animation: fall linear infinite; }
-
-@keyframes fall {
-    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.8; }
-    100% { transform: translateY(110vh) translateX(var(--shake-x)) rotate(360deg); opacity: 0; }
-}
-
-@media (max-width: 768px) {
-    .header-inner { flex-direction: column; padding: 10px; }
-    .access-grid { grid-template-columns: 1fr !important; }
-}
-```
