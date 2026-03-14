@@ -70,15 +70,15 @@ nav ul li a {
     padding: 5px 15px;
 }
 
-/* Hero Section - スマホ中央配置の修正 */
+/* Hero Section */
 .hero {
     height: 100vh;
     min-height: 600px;
     background-image: url('hero_yoshizaki.png');
     background-size: cover;
-    background-position: center center !important; /* 絶対に中央 */
+    background-position: center center !important;
     background-repeat: no-repeat;
-    background-attachment: scroll; /* スマホでの挙動安定 */
+    background-attachment: scroll;
     position: relative;
     display: flex;
     align-items: center;
@@ -105,14 +105,21 @@ nav ul li a {
 }
 
 .hero-content h2 {
-    font-size: clamp(32px, 8vw, 96px); /* 画面幅に合わせて自動調整 */
+    font-size: clamp(32px, 8vw, 96px);
     letter-spacing: 0.1em;
     font-weight: 700;
     margin-bottom: 20px;
     text-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
-/* History / Legend Sections */
+.hero-content .sub-title {
+    display: block;
+    font-size: clamp(16px, 3vw, 20px);
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+/* Sections */
 .section {
     padding: 100px 0;
     position: relative;
@@ -127,6 +134,19 @@ nav ul li a {
 .section-title h3 {
     font-size: clamp(24px, 5vw, 40px);
     color: var(--accent-color);
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-color);
 }
 
 .content-grid {
@@ -155,7 +175,7 @@ nav ul li a {
     object-fit: cover;
 }
 
-/* BBS Section - 豪華な掲示板 */
+/* BBS Section */
 .bbs-container {
     max-width: 800px;
     margin: 0 auto;
@@ -245,18 +265,16 @@ nav ul li a {
     100% { top: 100%; transform: translateX(var(--shake-x)) rotate(360deg); }
 }
 
-/* Footer */
 footer {
     padding: 40px 0;
     text-align: center;
     border-top: 1px solid var(--accent-color);
 }
 
-/* Media Queries (Mobile) */
 @media (max-width: 768px) {
     .header-inner { flex-direction: column; padding: 10px; }
     .logo { font-size: 24px; margin-bottom: 10px; }
-    nav ul { gap: 5px; }
+    nav ul { gap: 5px; flex-wrap: wrap; justify-content: center; }
     nav ul li { margin-left: 10px; }
     nav ul li a { font-size: 14px; padding: 5px; }
 
@@ -265,6 +283,6 @@ footer {
     }
     
     .hero {
-        height: 60vh; /* スマホでは高さを少し抑える */
+        height: 60vh;
     }
 }
