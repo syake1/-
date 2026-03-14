@@ -10,4 +10,232 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=游明朝&family=Sawarabi+Mincho&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<!-- (以下、変更なし) -->
+<body>
+    <header>
+        <div class="header-inner">
+            <h1 class="logo">吉崎御坊 願慶寺</h1>
+            <nav>
+                <ul>
+                    <li><a href="#history">歴史</a></li>
+                    <li><a href="#legend">伝説</a></li>
+                    <li><a href="#scenery">風景</a></li>
+                    <li><a href="#bbs">掲示板</a></li>
+                    <li><a href="#access">アクセス</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div id="sakura-container"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-snow-layer"></div>
+            <div class="hero-content">
+                <span class="sub-title">蓮如上人が開いた北陸の聖地</span>
+                <h2 id="hero-title">吉崎御坊 願慶寺</h2>
+                <p id="hero-desc">静寂、湖畔。550年の時を超えて響く念仏の心。</p>
+            </div>
+        </section>
+
+        <section id="history" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="en">History</span>
+                    <h3>吉崎御坊の歴史</h3>
+                </div>
+                <div class="content-grid">
+                    <div class="text-block">
+                        <p>吉崎御坊は、文明3年（1471年）に浄土真宗の祖、蓮如上人が越前国吉崎に建立した寺院です。比叡山からの迫害を逃れた蓮如上人が、この地を布教の拠点としたことで、北陸一帯に広大な信仰が広がりました。</p>
+                        <p>吉崎は、北を北潟湖、南を日本海に挟まれた小高い山にあり、風光明媚な景色が広がる場所です。</p>
+                        <p>現在は国の史跡に指定され、蓮如上人の銅像や本堂跡が残されており、この地を訪れる人々に当時の熱い信仰と風情を伝えています。</p>
+                    </div>
+                    <div class="image-frame">
+                        <img src="hero_yoshizaki.png" alt="吉崎御坊の風景">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="legend" class="section dark">
+            <div class="container">
+                <div class="section-title white">
+                    <span class="en">The Legend</span>
+                    <h3>嫁脅しの肉付きの面</h3>
+                </div>
+                <div class="legend-container">
+                    <div class="legend-visuals">
+                        <div class="visual-card">
+                            <img src="legend_visual_2.jpg" alt="嫁威肉附面 版木">
+                            <div class="visual-label">嫁威肉附面 版木（全体）</div>
+                        </div>
+                        <div class="visual-card">
+                            <img src="legend_visual_1.jpg" alt="版木の詳細">
+                            <div class="visual-label">彫り込まれた「鬼」の形相</div>
+                        </div>
+                    </div>
+
+                    <div class="legend-story-text">
+                        <h4 class="verse">「食まば食め 喰わば喰え金剛の 他力の信は よもや止むまじ」</h4>
+                        <div class="story-main">
+                            <p>吉崎御坊 願慶寺に伝わる「嫁威肉附面（よめおどしにくつきのめん）」の伝説。それは単なる恐ろしい話ではなく、真実の信心を伝える歴史の証です。</p>
+                            <p>姑が嫁の参詣を邪魔しようと鬼の面を被って脅しましたが、面が顔から離れなくなりました。蓮如上人の前で懺悔し念仏を唱えたところ、肉と共に面がポロリと外れたと伝えられています。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="scenery" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="en">Scenery</span>
+                    <h3>四季の情景</h3>
+                </div>
+                <ul class="scenery-gallery" style="list-style:none; display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
+                    <li class="gallery-item">
+                        <div style="background:#333; height:200px; display:flex; align-items:center; justify-content:center;">春の桜</div>
+                        <p>吉崎の丘をピンク色に染める桜。春には多くの参拝客で賑わいます。</p>
+                    </li>
+                    <li class="gallery-item">
+                        <div style="background:#333; height:200px; display:flex; align-items:center; justify-content:center;">北潟湖の夕映え</div>
+                        <p>鏡のような湖面に沈む夕陽。静寂の中に霊性が宿る瞬間です。</p>
+                    </li>
+                    <li class="gallery-item">
+                        <div style="background:#333; height:200px; display:flex; align-items:center; justify-content:center;">冬のしじま</div>
+                        <p>北国の雪に覆われた吉崎御坊。一切が白に還る純粋な世界です。</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="bbs" class="section dark">
+            <div class="container">
+                <div class="section-title white">
+                    <span class="en">Bulletin Board</span>
+                    <h3>交流掲示板</h3>
+                </div>
+                
+                <div class="bbs-container">
+                    <form id="bbsForm" class="bbs-form">
+                        <div class="form-group">
+                            <label for="userName">お名前</label>
+                            <input type="text" id="userName" placeholder="お名前を入力してください" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userComment">コメント</label>
+                            <textarea id="userComment" rows="4" placeholder="メッセージを入力してください" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="userImage" class="file-label" style="cursor:pointer; display:inline-block; border:1px dashed #dfbc7a; padding:10px;">
+                                <span class="icon">📷</span> 画像をアップロード
+                                <input type="file" id="userImage" accept="image/*" style="display:none">
+                            </label>
+                            <div id="imagePreview" class="image-preview" style="margin-top:10px; display:none;"></div>
+                        </div>
+                        <button type="submit" class="submit-btn" style="width:100%; padding:15px; background:#dfbc7a; color:#000; border:none; cursor:pointer; font-weight:bold;">旅の思い出を投稿する</button>
+                    </form>
+
+                    <div id="bbsPosts" class="bbs-posts" style="margin-top:30px;">
+                        <!-- 投稿がここに表示されます -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            (function() {
+                const bbsForm = document.getElementById('bbsForm');
+                const bbsPosts = document.getElementById('bbsPosts');
+                const userImage = document.getElementById('userImage');
+                const imagePreview = document.getElementById('imagePreview');
+                let selectedImageBase64 = '';
+
+                userImage.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (event) => {
+                            selectedImageBase64 = event.target.result;
+                            imagePreview.innerHTML = `<img src="${selectedImageBase64}" style="max-width:200px;">`;
+                            imagePreview.style.display = 'block';
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                const renderPosts = (posts) => {
+                    bbsPosts.innerHTML = posts.map((post) => `
+                        <div class="post-card" style="background:rgba(255,255,255,0.05); padding:20px; margin-bottom:20px; border-left:4px solid #dfbc7a;">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px solid rgba(223,188,122,0.2);">
+                                <span style="color:#dfbc7a; font-weight:bold;">${escapeHtml(post.name)}</span>
+                                <span style="font-size:0.8em; opacity:0.6;">${post.date}</span>
+                            </div>
+                            <p style="white-space:pre-wrap;">${escapeHtml(post.comment)}</p>
+                            ${post.image ? `<div style="margin-top:15px;"><img src="${post.image}" style="max-width:100%; height:auto;"></div>` : ''}
+                        </div>
+                    `).join('');
+                };
+
+                const escapeHtml = (str) => {
+                    const div = document.createElement('div');
+                    div.textContent = str;
+                    return div.innerHTML;
+                };
+
+                const loadPosts = () => {
+                    const posts = JSON.parse(localStorage.getItem('yoshizakiPosts') || '[]');
+                    renderPosts(posts);
+                };
+
+                bbsForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('userName').value;
+                    const comment = document.getElementById('userComment').value;
+                    const date = new Date().toLocaleString('ja-JP');
+                    const newPost = { name, comment, date, image: selectedImageBase64 };
+                    const posts = JSON.parse(localStorage.getItem('yoshizakiPosts') || '[]');
+                    posts.unshift(newPost);
+                    localStorage.setItem('yoshizakiPosts', JSON.stringify(posts));
+                    bbsForm.reset();
+                    imagePreview.style.display = 'none';
+                    selectedImageBase64 = '';
+                    renderPosts(posts);
+                });
+                loadPosts();
+            })();
+
+            // 粒子エフェクト
+            (function() {
+                const container = document.getElementById('sakura-container');
+                const particleCount = 50;
+                let currentType = 'sakura';
+                for (let i = 0; i < particleCount; i++) { createParticle(currentType); }
+                function createParticle(type) {
+                    const el = document.createElement('div');
+                    el.className = type;
+                    const size = type === 'sakura' ? (Math.random() * 10 + 10) : (Math.random() * 5 + 3);
+                    el.style.width = size + 'px'; el.style.height = size + 'px';
+                    el.style.left = Math.random() * 100 + 'vw';
+                    el.style.animationDelay = Math.random() * 10 + 's';
+                    el.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                    el.style.setProperty('--shake-x', (Math.random() * 200 - 100) + 'px');
+                    container.appendChild(el);
+                }
+                setTimeout(() => {
+                    currentType = 'snow';
+                    document.getElementById('hero').classList.add('winter');
+                    document.getElementById('hero-desc').textContent = '白銀の静寂。雪中に息づく不滅の信仰。';
+                }, 20000);
+            })();
+        </script>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align:center; padding:40px 0;">
+            <p>&copy; 2026 吉崎御坊 聖地巡礼保存会</p>
+            <address style="font-style:normal; opacity:0.6;">福井県あわら市吉崎</address>
+        </div>
+    </footer>
+</body>
+</html>
