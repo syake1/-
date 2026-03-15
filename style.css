@@ -6,15 +6,15 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #000; color: #fff; font-family: var(--serif); line-height: 1.8; overflow-x: hidden; width: 100%; }
 
-/* ヘッダー：中央寄せの徹底 */
+/* ヘッダー・ロゴのデザイン強化 */
 header { 
-    background: rgba(0,0,0,0.95); 
+    background: rgba(0,0,0,0.85); 
     position: fixed; 
     top: 0; 
     left: 0;
     width: 100%; 
     z-index: 1000; 
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 3px solid var(--accent);
     display: flex;
     justify-content: center;
 }
@@ -23,31 +23,32 @@ header {
     max-width: 1200px;
     display: flex; 
     flex-direction: column; 
-    align-items: center; /* 中央寄せ */
-    padding: 15px 20px; 
+    align-items: center; 
+    padding: 20px 20px; 
     margin: 0 auto;
 }
 .logo { 
+    font-family: 'Shippori Mincho', serif;
     font-weight: 900; 
     color: var(--accent); 
-    font-size: 1.8rem; 
-    letter-spacing: 4px; 
-    margin-bottom: 10px; 
+    font-size: clamp(2rem, 5vw, 3.5rem); /* 極めて大きく、かっこよく */
+    letter-spacing: 0.2em; 
     text-align: center; 
+    text-shadow: 0 0 20px rgba(223, 188, 122, 0.4);
 }
 nav ul { 
     display: flex; 
     list-style: none; 
-    gap: 20px; 
+    gap: 25px; 
     justify-content: center; 
     flex-wrap: wrap; 
 }
-nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
 nav ul li a:hover { color: var(--accent); }
 
-/* ヒーロー：中央寄せ・シンプル化 */
+/* ヒーロー：暗い膜(overlay)を削除した設定 */
 .hero {
-    height: 100vh;
+    height: 90vh;
     background-image: url('sakura.jpg');
     background-size: cover;
     background-position: center !important;
@@ -59,29 +60,16 @@ nav ul li a:hover { color: var(--accent); }
     text-align: center;
 }
 .hero.winter { background-image: url('winter_yoshizaki.jpg'); }
-.hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle, transparent 10%, #000 95%); z-index: 1; }
-.hero-content { position: relative; z-index: 10; width: 90%; max-width: 1000px; margin: 0 auto; }
-#hero-title { 
-    font-weight: 900; 
-    line-height: 1.2;
-    color: #fff; 
-    text-shadow: 0 0 40px #000;
-    font-size: clamp(48px, 15vw, 120px); /* 願慶寺のみなので大きめに表示 */
-    margin-bottom: 20px;
-    letter-spacing: 12px;
-}
 
-/* セクション設定 */
-.section { padding: 100px 0; border-bottom: 1px solid #222; width: 100%; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; text-align: center; }
-.section-title { margin-bottom: 50px; }
-.section-title h3 { font-size: 32px; color: var(--accent); padding-bottom: 15px; position: relative; display: inline-block; }
-.section-title h3::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 60px; height: 1px; background: var(--accent); transform: translateX(-50%); }
+/* 暗い膜をなしにする */
+.hero-overlay { display: none; }
+
+.hero-content { position: relative; z-index: 10; width: 90%; max-width: 1000px; margin: 0 auto; }
 
 /* 粒子アニメーション */
 #sakura-container { position: fixed; inset: 0; pointer-events: none; z-index: 9999; }
-.sakura { position: absolute; width: 15px; height: 15px; background: #FFB7C5; border-radius: 100% 0 100% 0; top: -20px; animation: fall linear infinite; }
-.snow { position: absolute; width: 5px; height: 5px; background: #fff; border-radius: 50%; top: -20px; animation: fall linear infinite; }
+.sakura { position: absolute; width: 16px; height: 16px; background: #FFB7C5; border-radius: 100% 0 100% 0; top: -20px; animation: fall linear infinite; }
+.snow { position: absolute; width: 6px; height: 6px; background: #fff; border-radius: 50%; top: -20px; animation: fall linear infinite; box-shadow: 0 0 10px #fff; }
 
 @keyframes fall {
     0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
@@ -89,14 +77,19 @@ nav ul li a:hover { color: var(--accent); }
     100% { transform: translateY(110vh) translateX(var(--shake-x)) rotate(360deg); opacity: 0; }
 }
 
-.gold-btn { display: inline-block; padding: 15px 40px; background: var(--accent); color: #000; font-weight: bold; text-decoration: none; margin-top: 20px; transition: 0.3s; }
+/* セクション共通 */
+.section { padding: 100px 0; border-bottom: 2px solid #222; width: 100%; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; text-align: center; }
+.section-title h3 { font-size: 32px; color: var(--accent); padding-bottom: 15px; position: relative; display: inline-block; }
+.section-title h3::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 60px; height: 2px; background: var(--accent); transform: translateX(-50%); }
+
+.gold-btn { display: inline-block; padding: 18px 45px; background: var(--accent); color: #000; font-weight: bold; text-decoration: none; margin-top: 20px; transition: 0.3s; border-radius: 5px; }
 .gold-btn:hover { background: #fff; transform: scale(1.05); }
 
 @media (max-width: 768px) {
-    .header-inner { padding: 10px; }
-    .hero { height: 75vh; }
-    #hero-title { font-size: 56px; letter-spacing: 6px; }
-    .logo { font-size: 1.5rem; letter-spacing: 2px; }
-    nav ul { gap: 12px; }
+    .header-inner { padding: 15px 10px; }
+    .logo { font-size: 2rem; letter-spacing: 0.1em; }
+    nav ul { gap: 15px; }
     nav ul li a { font-size: 0.9rem; }
+    .hero { height: 70vh; }
 }
