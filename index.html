@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>願慶寺 - 蓮如上人ゆかりの地 | あわら市</title>
+    <title>吉崎御坊 願慶寺 - 蓮如上人ゆかりの地 | あわら市</title>
     <!-- キャッシュ対策 -->
-    <link rel="stylesheet" href="style.css?v=210">
+    <link rel="stylesheet" href="style.css?v=300">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Shippori+Mincho:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="header-inner">
-            <h1 class="logo">願慶寺</h1>
-            <nav>
+            <!-- 一番上の文字を大きく、かっこよくデザイン -->
+            <h1 class="logo">吉崎御坊 願慶寺</h1>
+            <nav style="margin-top: 15px;">
                 <ul>
                     <li><a href="#history">歴史</a></li>
                     <li><a href="#legend">伝説</a></li>
@@ -26,30 +27,28 @@
     </header>
 
     <main>
-        <!-- ヒーロー：15秒サイクル -->
+        <!-- ヒーロー：15秒サイクル（回りを暗くするオーバーレイを削除） -->
         <section id="hero" class="hero">
             <div id="sakura-container"></div>
-            <div class="hero-overlay"></div>
+            <!-- hero-overlay（暗い膜）を削除 -->
             <div class="hero-content">
-                <span class="sub-title">蓮如上人が開いた北陸の聖地</span>
-                <!-- 「吉崎御坊」を削除し、大迫力の「願慶寺」のみに -->
-                <h2 id="hero-title">願慶寺</h2>
-                <p id="hero-desc">静寂、湖畔。550年の時を超えて響く念仏の心。</p>
+                <span class="sub-title" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">蓮如上人が開いた北陸の聖地</span>
+                <!-- 中央の大きい「願慶寺」の文字を削除 -->
+                <p id="hero-desc" style="color: #fff; text-shadow: 2px 2px 10px rgba(0,0,0,1); font-size: 1.4em; margin-top: 20px; font-weight: bold;">静寂、湖畔。550年の時を超えて響く念仏の心。</p>
             </div>
         </section>
 
-        <!-- 歴史セクション（年表画像あり） -->
+        <!-- 歴史セクション（略年表画像あり） -->
         <section id="history" class="section">
             <div class="container">
                 <div class="section-title">
                     <span class="en">History</span>
-                    <h3>歴史・年表</h3>
+                    <h3>歴史・略年表</h3>
                 </div>
                 <div class="history-main" style="max-width: 900px; margin: 0 auto; text-align: left;">
                     <div class="text-block" style="border-left: 5px solid #dfbc7a; padding-left: 20px; color: #fff; margin-bottom: 30px;">
                         <p style="font-size: 1.1em; line-height: 2.2;">文明3年（1471年）に建立された吉崎御坊。その550年に及ぶ深い信仰の歴史を略年表でご紹介します。</p>
                     </div>
-                    <!-- 年表をしっかり表示 -->
                     <div class="nenpyo-container" style="background:#fff; padding:10px; border:3px solid #dfbc7a; box-shadow:0 0 20px rgba(223,188,122,0.3);">
                         <img src="nenpyo.jpg" alt="吉崎御坊 願慶寺 略年表" style="width:100%; height:auto; display:block;">
                         <p style="text-align:right; font-size:12px; color:#333; margin-top:5px; font-weight:bold;">出典：福井県史</p>
@@ -78,7 +77,7 @@
             </div>
         </section>
 
-        <!-- アクセス：中央寄せGoogleマップ -->
+        <!-- アクセス：吉崎御坊をアップにしたGoogleマップ -->
         <section id="access" class="section">
             <div class="container" style="text-align: center;">
                 <div class="section-title">
@@ -86,13 +85,15 @@
                     <h3>アクセス</h3>
                 </div>
                 <div style="background:#111; padding:30px; border:2px solid #dfbc7a; color: #fff; max-width:800px; margin:0 auto; margin-bottom: 30px;">
-                    <h4 style="color:#dfbc7a; font-size:1.6em; margin-bottom:15px;">願慶寺（がんけいじ）</h4>
+                    <h4 style="color:#dfbc7a; font-size:1.6em; margin-bottom:15px;">吉崎御坊 願慶寺</h4>
                     <p>〒922-0679 福井県あわら市吉崎１丁目３０２</p>
                     <p style="font-size: 1.4em; font-weight:bold; color: #dfbc7a; margin: 15px 0;">TEL：0776-75-1956</p>
-                    <a href="https://maps.app.goo.gl/Yc6tqY6eK1T54P64A" target="_blank" class="gold-btn" style="text-decoration:none;">Googleマップを開く</a>
+                    <!-- Googleマップへのボタンをエラーが出ない形式に修正 -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=吉崎御坊+願慶寺" target="_blank" class="gold-btn" style="text-decoration:none;">Googleマップで道案内を起動</a>
                 </div>
+                <!-- 地図：ズームレベルを上げて(z=19)アップで表示 -->
                 <div style="width: 100%; max-width: 900px; height: 450px; border: 2px solid #dfbc7a; margin: 0 auto;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1611.074076252222!2d136.2152468152718!3d36.21832048007421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff8926955555555%3A0x7d9f7d2948719541!2z6aSY5oW25a-677yI5ZCJ5bSO5b6h5Z2K77yI!5e0!3m2!1sja!2sjp!4v1710450000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805.5397441865842!2d136.21609102922122!3d36.21854589874837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff8926955555555%3A0x7d9f7d2948719541!2z6aSY5oW25a-677yI5ZCJ5bSO5b6h5Z2K77yI!5e0!3m2!1sja!2sjp!4v1710450000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
@@ -117,10 +118,8 @@
                 }
                 function run() {
                     make('sakura'); hero.classList.remove('winter');
-                    heroDesc.textContent = '静寂、湖畔。550年の時を超えて響く念仏の心。';
                     setTimeout(() => {
                         make('snow'); hero.classList.add('winter');
-                        heroDesc.textContent = '白銀の静寂。雪中に息づく不滅の信仰。';
                         setTimeout(run, 15000);
                     }, 15000);
                 }
@@ -130,7 +129,7 @@
     </main>
 
     <footer style="padding: 40px; text-align: center; color: #dfbc7a; border-top: 1px solid #222;">
-        <p>&copy; 2026 願慶寺</p>
+        <p>&copy; 2026 吉崎御坊 願慶寺</p>
     </footer>
 </body>
 </html>
