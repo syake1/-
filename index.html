@@ -17,9 +17,10 @@
             padding: 0;
             font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
             line-height: 1.8;
+            overflow-x: hidden;
         }
         
-        /* ヘッダーのデザイン */
+        /* ヘッダー */
         header {
             background-color: rgba(17, 17, 17, 0.95);
             border-bottom: 1px solid #222;
@@ -55,21 +56,30 @@
             color: #fff;
             text-decoration: none;
             font-size: 0.95em;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #dfbc7a;
         }
 
-        /* ★黒い部分（ヒーロー）の調整：高さを100vhから50vh（半分）に変更★ */
+        /* ★ヒーローエリアとサクラ・雪の演出設定★ */
         .hero {
             background-color: #1a1a1a;
-            height: 50vh;
+            background-image: url('hero_main.jpg'); /* 背景画像 */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 50vh; /* 高さを半分に調整 */
             min-height: 300px;
             position: relative;
             overflow: hidden;
             display: block;
             text-align: center;
+        }
+        #sakura-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
         }
         .hero-content {
             position: absolute;
@@ -95,7 +105,40 @@
             font-weight: bold;
         }
 
-        /* メインコンテンツ・共通セクション */
+        /* サクラの花びらの形とアニメーション */
+        .sakura {
+            position: absolute;
+            background: #ffdbed; /* 薄いピンク色 */
+            border-radius: 150% 0 150% 150%;
+            width: 10px;
+            height: 10px;
+            opacity: 0.8;
+            animation: fall linear infinite;
+            top: -10px;
+        }
+        /* 雪の結晶のアニメーション */
+        .snow {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            width: 5px;
+            height: 5px;
+            opacity: 0.8;
+            animation: fall linear infinite;
+            top: -10px;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(55vh) rotate(360deg) translateX(var(--shake-x, 50px));
+                opacity: 0;
+            }
+        }
+
+        /* 各セクションの設定 */
         .section {
             padding: 60px 20px;
             text-align: center;
@@ -122,10 +165,9 @@
             margin: 0;
             font-size: 1.8em;
             color: #fff;
-            font-weight: 700;
         }
 
-        /* 歴史・略年表 */
+        /* 歴史 */
         .text-block {
             border-left: 5px solid #dfbc7a;
             padding-left: 20px;
@@ -136,7 +178,6 @@
             background: #fff;
             padding: 15px;
             border: 3px solid #dfbc7a;
-            box-shadow: 0 0 20px rgba(223,188,122,0.3);
             margin-bottom: 40px;
         }
         .nenpyo-container img, .poster-container img {
@@ -145,7 +186,7 @@
             display: block;
         }
 
-        /* 伝説セクション */
+        /* 伝説 */
         .legend-visuals {
             margin-bottom: 30px;
         }
@@ -164,7 +205,6 @@
             color: #dfbc7a;
             text-align: center;
             padding: 10px 0 5px 0;
-            font-size: 0.9em;
         }
         .legend-story-text {
             background: rgba(223,188,122,0.05);
@@ -180,11 +220,7 @@
             margin-bottom: 20px;
         }
 
-        /* アクセス情報（2カラム配置） */
-        .access-grid {
-            margin: 0 auto 40px;
-            text-align: left;
-        }
+        /* アクセス情報 */
         .info-card {
             background: #161616;
             padding: 30px;
@@ -199,9 +235,6 @@
             border-bottom: 1px solid #dfbc7a;
             padding-bottom: 10px;
         }
-        dl {
-            margin: 0;
-        }
         dt {
             color: #dfbc7a;
             font-weight: bold;
@@ -212,26 +245,15 @@
             margin-bottom: 10px;
             padding-left: 1em;
         }
-        dd ul {
-            padding-left: 1.2em;
-            margin: 5px 0;
-        }
         .gold-btn {
             display: inline-block;
             background: #dfbc7a;
             color: #111;
             text-decoration: none;
             padding: 12px 30px;
-            font-size: 0.9em;
             font-weight: bold;
             border-radius: 4px;
-            transition: background 0.3s;
         }
-        .gold-btn:hover {
-            background: #fff;
-        }
-
-        /* ★正しいGoogleマップ用の枠枠★ */
         .map-wrapper {
             width: 100%;
             height: 450px;
@@ -239,21 +261,10 @@
             margin: 0 auto;
         }
 
-        /* パソコンなどの広い画面用の調整 */
         @media (min-width: 768px) {
-            .legend-visuals {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
-            }
-            .access-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-            }
-            .info-card {
-                margin-bottom: 0;
-            }
+            .legend-visuals { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+            .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+            .info-card { margin-bottom: 0; }
         }
     </style>
 </head>
@@ -315,7 +326,7 @@
                             <div class="visual-label">嫁威肉附面 版木</div>
                         </div>
                         <div class="visual-card">
-                            <img src="legend_visual_1.jpg" alt="肉付き面の形形">
+                            <img src="legend_visual_1.jpg" alt="肉付き面の形相">
                             <div class="visual-label">肉付き面の形相</div>
                         </div>
                     </div>
@@ -340,13 +351,10 @@
                         <dl>
                             <dt>拝観料</dt>
                             <dd>大人 500円 / 小学生 300円</dd>
-                            
                             <dt>拝観時間</dt>
                             <dd>7:00 〜 19:00（年中無休）</dd>
-                            
                             <dt>所在地</dt>
                             <dd>〒922-0679 福井県あわら市吉崎1丁目302</dd>
-                            
                             <dt>電話番号</dt>
                             <dd>0776-75-1956</dd>
                         </dl>
@@ -357,13 +365,8 @@
                         <dl>
                             <dt>お車でお越しの方</dt>
                             <dd>JR大聖寺駅から約12分</dd>
-                            
                             <dt>バスでお越しの方</dt>
-                            <dd>
-                                JR加賀温泉駅から周遊バスに乗車、<br>
-                                「蓮如上人記念館・越前加賀県境の館」下車 徒歩約3分
-                            </dd>
-                            
+                            <dd>JR加賀温泉駅から周遊バスに乗車、「蓮如上人記念館・越前加賀県境の館」下車 徒歩約3分</dd>
                             <dt>駐車場</dt>
                             <dd>無料（吉崎観光センター前をご利用ください）</dd>
                         </dl>
