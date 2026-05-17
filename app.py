@@ -1,15 +1,12 @@
 import streamlit as st
 
-# 画面を横いっぱいに広く使う設定
 st.set_page_config(layout="wide")
 
+# タイトル
 st.title("願慶寺 ホームページ")
 
-st.write("下のボタンをクリックすると、願慶寺のホームページが新しいタブで開きます。")
+# 本文
+st.write("ここに、お寺の紹介や住所、お知らせなどの文章を自由に書くことができます。")
 
-# 【ここをご自身のGoogleサイトのURLに書き換えてください】
-# ※「https://sites.google.com/view/サイト名」の形です
-google_site_url = "https://sites.google.com/view/あなたのサイト名"
-
-# クリックすると新しいページで開くボタンを設置
-st.link_button("👉 願慶寺ホームページを開く", google_site_url, type="primary")
+# 画像を表示したい場合（リポジトリにある画像ファイル名を指定）
+# st.image("otera.jpg", caption="願慶寺の外観")
